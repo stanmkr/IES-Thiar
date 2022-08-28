@@ -1,0 +1,436 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+
+
+nav {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+main {
+    max-width: 90%;
+    margin: 0px auto;
+}
+
+
+
+#encabezado_sticky {
+    margin: 0px auto;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Raleway', 'Colibri';
+    font-weight: 900;
+
+}
+
+#encabezado_sticky>div {
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    background: rgb(219, 213, 110);
+
+
+}
+
+#encabezado_sticky>div:hover {
+    border-radius: 25px;
+    transition-duration: 1.5s;
+    background: rgb(136, 171, 117);
+
+
+}
+
+#encabezado_sticky a:hover {
+    color: white;
+    transition-duration: 0.5s;
+}
+
+#encabezado_sticky a:focus {
+    color: red;
+    transition-duration: 0.5;
+}
+
+#encabezado_sticky a:active {
+    color: green;
+
+}
+
+h2 {
+    font-size: 2.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-size: 2vw;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+article {
+    text-align: center;
+    background: #feb236;
+    color: white;
+
+}
+
+
+article h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+}
+
+article p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
+    padding: 30px;
+    border: 2px solid black;
+    text-align: justify;
+    text-indent: 50px;
+    line-height: 35px;
+    color: black;
+
+}
+
+button {
+    padding: 10px 30px;
+    background: #FC5130;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.5em;
+}
+
+button:hover {
+    background: #2D93AD;
+    transition-duration: 1.5s;
+    cursor: pointer;
+    color: white;
+    border-radius: 35px;
+}
+
+/* ------------------- PAGINA DE INICIO ---------------------- */
+
+
+
+#header_inicio {
+
+    padding: 200px;
+    background-image: url(../imagenes/portada.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+#header_acerca_de {
+    max-width: 100%;
+    padding: 200px;
+    background-image: url(../imagenes/portada_acerca_de.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+#header_contacto {
+
+    padding: 200px;
+    background-image: url(../imagenes/portada_contacto.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+
+
+.titulo {
+
+    border-radius: 25px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(20px);
+
+    padding: 40px 0px 40px 0px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Raleway', 'Colibri';
+    word-spacing: 5px;
+    margin: 0px auto;
+    width: 60%;
+
+}
+
+.titulo>p {
+    text-transform: none;
+}
+
+
+
+footer {
+    background: #FC5130;
+    padding: 1em;
+    width: 100%;
+    color: white;
+}
+
+.mas_info {
+    margin: 0px auto;
+    max-width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.info_inicio {
+    margin: 0px auto;
+    padding: 20px;
+    margin-top: 20px;
+
+}
+
+#tabla_imagen {
+    margin: 0px auto;
+    max-width: auto;
+    padding-top: 50px;
+}
+
+#tabla_imagen :first-child {
+    max-width: 90%;
+}
+
+.banner {
+    max-width: 50%;
+
+}
+
+#banners div {
+    margin-bottom: 10%;
+}
+
+#banners {
+    margin: 0px auto;
+}
+
+/* ------------------- PAGINA DE CONTACTO ---------------------- */
+
+#div_contacto {
+    margin: 0px auto;
+    background: rgb(125, 124, 132);
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#div_contacto>div {
+    margin: 0px auto;
+    max-width: 90%;
+    padding: 1% 5px 1% 5px;
+    background: rgb(219, 213, 110);
+    color: rgb(125, 124, 132);
+    font-weight: 900;
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#div_contacto>#formulario_contacto {
+    margin: 0px auto;
+    padding: 50px;
+    background: rgb(45, 147, 173);
+    text-align: center;
+
+
+
+}
+
+#textarea {
+    margin-top: 1%;
+    max-width: 100%;
+}
+
+#b1 {
+    background: greenyellow;
+    padding: 5px;
+    margin-top: 1%;
+}
+
+#b2 {
+    background: red;
+    padding: 5px;
+    color: white;
+}
+
+
+/* ------------------- PAGINA ACERCA DE ---------------------- */
+
+
+.informacion {
+    padding: 1% 1%;
+
+    margin: 0px auto;
+    background: #DBD56E;
+    max-width: 50%;
+
+}
+
+#texto1_acerca>p {
+
+    column-count: 2;
+    padding: 3%;
+    line-height: 30px;
+    column-gap: 30px;
+
+}
+
+#texto2_acerca p {
+
+    column-count: 2;
+    line-height: 30px;
+    column-gap: 30px;
+}
+
+#texto3_acerca {
+    line-height: 40px;
+
+}
+
+#header_video_acerca {
+    max-width: 50%;
+    margin: 0px auto;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #2d93ad;
+}
+
+#blockchain {
+    color: #DBD56E;
+    text-transform: uppercase;
+    font-family: 'Raleway', 'Colibri';
+
+
+}
+
+/* ------------------- BREAKPOINTS ---------------------- */
+
+@media screen and (max-width: 576) {
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 5vw;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h3 {
+        font-size: 5vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+    }
+
+    article p {
+        font-size: 3vw;
+        ;
+        color: white
+    }
+
+
+
+}
+
+
+
+/* ------------------- GRID ---------------------- */
+
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "nav nav nav nav"
+        "header header header header"
+        "main main main aside"
+        "footer footer footer footer"
+    ;
+}
+
+
+main, #main_contacto {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+aside {
+    grid-area: aside;
+    margin-left: 30px;
+}
+
+nav {
+    grid-area: nav;
+}
+
+#header_inicio, #header_contacto, #header_acerca_de {
+    grid-area: header;
+}
+
+
+#banner {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "banner1"
+        "banner2"
+        "banner3"
+        "banner4"
+    ;
+
+}
+
+#banner a:nth-child(1) {
+    grid-area: banner1;
+}
+
+#banner a:nth-child(2) {
+    grid-area: banner2;
+}
+
+#banner a:nth-child(3) {
+    grid-area: banner3;
+}
+
+#banner a:nth-child(4) {
+    grid-area: banner4;
+}
