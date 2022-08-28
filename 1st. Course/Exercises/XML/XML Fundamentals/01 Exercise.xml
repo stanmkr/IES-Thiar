@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+  <libro>
+    <titulo>El Quijote</titulo>
+    <autor>MIguel de Cervantes</autor>
+    <editorial>Librería de Garnier Hermanos</editorial>
+    <anyo>1890</anyo>
+  </libro>
+  <libro>
+    <titulo>El niño con el pijama de rayas</titulo>
+    <autor>John Boyne</autor>
+    <editorial>Salamandra</editorial>
+    <anyo>2007</anyo>
+  </libro>
+</libros>
