@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<inmobiliaria>
+  <nombre>Tm Group</nombre>
+  <viviendas>
+    <vivienda>
+      <nombre>Villa Pepe</nombre>
+      <tipo>Chalet</tipo>
+      <estado>Venta</estado>
+      <direccion>
+        <calle>Calle Sol 1030</calle>
+        <poblacion>Torrevieja</poblacion>
+        <codigo_postal>03184</codigo_postal>
+      </direccion>
+      <precio>140.000€</precio>
+    </vivienda>
+    <vivienda>
+      <nombre>Villa Millionario</nombre>
+      <tipo>Chalet</tipo>
+      <estado>Venta</estado>
+      <direccion>
+        <calle>Calle Luna 1050</calle>
+        <poblacion>Torrevieja</poblacion>
+        <codigo_postal>03184</codigo_postal>
+      </direccion>
+      <precio>430.000€</precio>
+    </vivienda>
+    <vivienda>
+      <nombre>Villa Millionario</nombre>
+      <tipo>Chalet</tipo>
+      <estado>Venta</estado>
+      <direccion>
+        <calle>Calle Luna 1050</calle>
+        <poblacion>Torrevieja</poblacion>
+        <codigo_postal>03184</codigo_postal>
+      </direccion>
+      <precio>430.000€</precio>
+    </vivienda>
+    <vivienda>
+      <nombre>Bungalow Vacaciones</nombre>
+      <tipo>Bungalow</tipo>
+      <estado>Alquiler</estado>
+      <direccion>
+        <calle>Calle Federico 50</calle>
+        <poblacion>Torrevieja</poblacion>
+        <codigo_postal>03184</codigo_postal>
+      </direccion>
+      <precio>450€</precio>
+    </vivienda>
+  </viviendas>
+</inmobiliaria>
