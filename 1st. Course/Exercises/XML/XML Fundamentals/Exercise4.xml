@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<programas>
+  <programa nombre='Firefox' licencia='GPL' licencia2='MPL' />
+  <programa nombre='LibreOffice' licencia='LGPL' />
+  <programa nombre='Inkscape' licencia="GPL" />
+  <programa nombre ="VLC" licencia="Desconocida"/>
+  <programa nombre="Intelli J Idea" licencia ="Desconocida"/>
+</programas>
