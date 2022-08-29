@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="estilos.css" ?>
+
+<inventario>
+  <articulo>
+    <nombre>Sofá</nombre>
+    <precio>Precio: 642€</precio>
+  </articulo>
+  <articulo>
+    <nombre>Mesa</nombre>
+    <precio>Precio: 305€</precio>
+  </articulo>
+  <articulo>
+    <nombre>Lámpara</nombre>
+    <precio>Precio: 89€</precio>
+  </articulo>
+   <articulo>
+    <nombre>Cama</nombre>
+    <precio>Precio: 900€</precio>
+  </articulo>
+   <articulo>
+    <nombre>Silla</nombre>
+    <precio>Precio: 70€</precio>
+  </articulo>
+</inventario>
