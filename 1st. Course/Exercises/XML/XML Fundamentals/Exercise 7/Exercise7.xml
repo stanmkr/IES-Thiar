@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="estilocolores.css" ?>
+<mezclas>
+<color resultado = "lila">rojo y azul</color>
+<color resultado = "naranja">rojo y amarillo</color>
+<color resultado = "turquesa">amarillo, azul y blanco</color>
+</mezclas>
