@@ -1,0 +1,6 @@
+<!ELEMENT productos (producto+)>
+<!ELEMENT producto (identificacion, nombre)>
+<!ELEMENT identificacion (#PCDATA | codigo | id)*>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
