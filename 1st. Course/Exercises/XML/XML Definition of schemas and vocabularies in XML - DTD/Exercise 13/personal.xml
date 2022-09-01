@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE personal SYSTEM "personal.dtd">
+<personal>
+  <persona id="p1" salario="20000">
+    <datos>
+      <nombre>Juan</nombre>
+      <apellido>Sanchez</apellido>
+    </datos>
+    <email>juaniko_morenito@hotmail.com</email>
+    <url href="http://juaniko.com"/>
+    <relacion/>
+  </persona>
+  <persona id="p2">
+    <datos>
+      <nombre>Pepe</nombre>
+      <apellido>Pepito</apellido>
+    </datos>
+    <email>pepito_reshulon@hotmail.com</email>
+    <url href="http://pepito.com"/>
+    <relacion director="p1"/>
+  </persona>
+  <persona id="p3">
+    <datos>
+      <nombre>Pedro</nombre>
+      <apellido>Sanchez</apellido>
+    </datos>
+    <email>pedro_el_guapo@hotmail.com</email>
+    <url href="http://truñosanchez.com"/>
+    <relacion trabajador="p2"/>
+  </persona>
+  <persona id="p4" salario="70000">
+    <datos>
+      <nombre>Anonimo</nombre>
+      <apellido>Anonimous</apellido>
+    </datos>
+    <email>hacker@hotmail.com</email>
+    <url href="http://hacked.com"/>
+    <relacion/>
+  </persona>
+</personal>
