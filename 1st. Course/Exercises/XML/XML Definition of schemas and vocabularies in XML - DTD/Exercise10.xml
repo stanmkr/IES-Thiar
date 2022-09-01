@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE futbol [
+  <!ELEMENT futbol (jugador*)>
+  <!ELEMENT jugador EMPTY>
+  <!ATTLIST jugador nombre NMTOKENS #REQUIRED>
+  <!ATTLIST jugador codigo ID #REQUIRED>
+]>
+
+<futbol>
+  <jugador nombre="Alfredo_Di_Stéfano" codigo="ADS"/>
+  <jugador nombre="Edson_Arantes_do_Nascimento_Pelé" codigo="EANP" />
+  <jugador nombre="Diego_Armando_Maradona" codigo="DAM" />
+  <jugador nombre="Johan Cruyff" codigo="JC" />
+</futbol>
