@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT albaran (numero,fecha,cliente,articulos)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT cliente (nombre, poblacion)>
+<!ATTLIST cliente id CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ELEMENT articulos (compra)*>
+<!ELEMENT compra (articulo+, cantidad, descuento?)>
+<!ELEMENT articulo (descripcion, (botella | granel), precio)>
+<!ATTLIST articulo codigo CDATA #REQUIRED >
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT botella EMPTY>
+<!ELEMENT granel EMPTY>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT descuento (#PCDATA)>
+
+
+
+
+
+
+
+
+
