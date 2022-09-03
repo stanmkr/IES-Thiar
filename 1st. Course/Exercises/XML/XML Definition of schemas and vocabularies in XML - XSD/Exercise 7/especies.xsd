@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="especie">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element name="nombrecomun" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+        <xs:element name="nombrecientifico" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
