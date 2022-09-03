@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:element name="animal">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="nombrecientifico" type="xs:string" />
+        <xs:element name="nombrecomun" type="xs:string" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<!--<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+  <xs:element name="animal">
+    <xs:complexType>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element name="nombrecientifico" type="xs:string" />
+          <xs:element name="nombrecomun" type="xs:string" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element name="nombrecomun" type="xs:string" />
+          <xs:element name="nombrecientifico" type="xs:string" />
+        </xs:sequence>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+
+
+  
+
+  
