@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<documento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="documento.xsd"
+            idioma = "Inglés"> This is an English document.</documento>
+            
+<!--
+El documento xsd permite validar un elemento llamado <documento> con un contenido de tipo <xs:string>, además
+ese elemento <documento> debe obligatoriamente contener un atributo llamado "idioma", ese atributo sólamente puede contener
+1 de las enumeraciones que tiene el documento .xsd < Castellano | Inglés | Francés | Catalán >
+-->
