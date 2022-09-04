@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="apellido" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="tipoCiclista">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="clasicomana"/>
+      <xs:enumeration value="esprinter"/>
+      <xs:enumeration value="escaladora"/>
+      <xs:enumeration value="vueltomana"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="equipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="nacionalidad" type="xs:string"/>
+        <xs:element name="cantidadciclistas" type="xs:int"/>
+        <xs:element name="marcabici" type="xs:string"/>
+        <xs:choice>
+          <xs:element name="uci">
+            <xs:complexType/>
+          </xs:element>
+          <xs:element name="protour">
+            <xs:complexType/>
+          </xs:element>
+        </xs:choice>
+        <xs:element name="direccion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="director" type="persona" maxOccurs="3"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ciclistas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ciclista" minOccurs="7" maxOccurs="30">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="apellido" type="xs:string"/>
+                    <xs:choice>
+                      <xs:element name="edad" type="xs:string"/>
+                      <xs:element name="nacimiento" type="xs:string"/>
+                    </xs:choice>
+                    <xs:element name="puntos" type="xs:int" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="tipo" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="clasicomana"/>
+                        <xs:enumeration value="esprinter"/>
+                        <xs:enumeration value="escaladora"/>
+                        <xs:enumeration value="vueltomana"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
