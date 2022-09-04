@@ -1,0 +1,1 @@
+//ciclista[min(//puntos)][@tipo="esprinter"]/apellido/text()
