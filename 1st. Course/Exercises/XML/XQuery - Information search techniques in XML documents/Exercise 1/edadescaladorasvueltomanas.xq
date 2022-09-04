@@ -1,0 +1,1 @@
+avg(//ciclista[@tipo="vueltomana" or @tipo="escaladora"]/edad)
