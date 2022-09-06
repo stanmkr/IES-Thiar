@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<obras>
+  <pintura pais="Francia" anyo="1937">
+    <titulo>Guernica</titulo>
+    <autor>Pablo Ruiz Picasso</autor>
+    <museo visible="true">Reina Sofía</museo>
+    <tipo>Óleo</tipo>
+  </pintura>
+  <pintura pais="España" anyo="1973">
+    <titulo>Foll</titulo>
+    <autor>Antoni Tàpies</autor>
+    <museo visible="false">Museo de arte moderno de París</museo>
+    <tipo>Litografía</tipo>
+  </pintura>
+  <foto pais="Afganistán" anyo="1984">
+    <titulo>La niña afgana</titulo>
+    <autor>Steve McCurry</autor>
+    <museo visible="true">FotoNostrum</museo>
+    <color/>
+  </foto>
+  <foto pais="URSS" anyo="1935">
+    <titulo>Chica con una Leica</titulo>
+    <autor>Aleksandr Rodchenko</autor>
+    <museo visible="true">Reina Sofía</museo>
+    <bn/>
+  </foto>
+</obras>
