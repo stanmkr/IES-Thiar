@@ -21,5 +21,5 @@
 - Manage the information stored in ERP-CRM systems guaranteeing its integrity.
 
 ## Course duration (2nd year included)
-- 2000 hours
+- 2000 hours 
 
