@@ -1,1 +1,1 @@
-# IES-Thiar
+# <p align="center"> Exercises, projects and exams from the <a href="https://portal.edu.gva.es/iesthiar/centro-2/nuestro-centro/" target="_blank" rel="noreferrer">IES Thiar</a> Multiplatform App Development course <p>
