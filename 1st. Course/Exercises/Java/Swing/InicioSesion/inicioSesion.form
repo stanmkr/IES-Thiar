@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Ejercicios.Ejercicio9.inicioSesion">
+  <grid id="27dc6" binding="panelSuperior" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="30" vgap="10">
+    <margin top="20" left="40" bottom="20" right="20"/>
+    <constraints>
+      <xy x="20" y="20" width="634" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="fc21e" binding="panelInferior" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6e59d" class="javax.swing.JButton" binding="botonIniciarSesion">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12013057"/>
+              <font size="16" style="1"/>
+              <foreground color="-1"/>
+              <text value="Iniciar sesión"/>
+              <toolTipText value="Inicia sesión con tu usuario y contraseña"/>
+            </properties>
+          </component>
+          <component id="20f48" class="javax.swing.JButton" binding="botonCrearUsuario">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-4670786"/>
+              <foreground color="-1"/>
+              <text value="Crear usuario"/>
+              <toolTipText value="Crea un nuevo usuario"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="c5c88" class="javax.swing.JLabel" binding="labelUsuario">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Usuario:"/>
+        </properties>
+      </component>
+      <component id="94a0d" class="javax.swing.JLabel" binding="labelContrasenya">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Contraseña:"/>
+        </properties>
+      </component>
+      <component id="3727c" class="javax.swing.JTextField" binding="usuario">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="a1ad4" class="javax.swing.JPasswordField" binding="contrasenya">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>
