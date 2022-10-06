@@ -7,13 +7,13 @@ import kotlin.math.*
  * Septiembre / 2022
  */
 fun programaTerminado(){
-    println("Debes de introducir valores mayores a 0.\n")
+    println("Introduce bien las cantidades máquina, que eres un máquina...\n")
     println("Terminando programa...")
     println("Programa terminado.")
 }
+
 fun esPositivo (valor: Double):Boolean{
     return valor > 0
-
 }
 
 fun main(args: Array<String>) {
@@ -51,16 +51,10 @@ fun main(args: Array<String>) {
             }else{
                 programaTerminado()
             }
-
         }else{
             programaTerminado()
-
         }
-
     }else{
         programaTerminado()
     }
-
-
-
 }
