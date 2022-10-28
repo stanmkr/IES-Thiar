@@ -10,17 +10,24 @@ public class Profesor extends Persona {
     Scanner scanner = new Scanner(System.in);
     private String curso;
     private ArrayList<String> listaAsignaturas;
+    private final boolean tutor;
 
 
     // CONSTRUCTOR
-    public Profesor(String nombre, String dni, int telefono, int edad, String curso) {
+    public Profesor(String nombre, String dni, int telefono, int edad, String curso, boolean tutor) {
         super(nombre, dni, telefono, edad);
         this.curso = curso;
+        this.tutor = tutor;
         this.listaAsignaturas = new ArrayList<>();
+        this.listaAsignaturas.add(curso);
     }
 
 
     // MÉTODOS
+
+    /**
+     * añade una asignatura a la lista de asignaturas
+     */
     public void anyadirAsignatura() {
         System.out.print("Introduce la asignatura que quieres añadir a la lista de asignaturas: ");
         String asignatura = scanner.nextLine();
@@ -28,21 +35,16 @@ public class Profesor extends Persona {
 
     }
 
-    public void eliminarAsignatura() {
-        System.out.print("Introduce la asignatura que quieres eliminar de la lista de asignaturas: ");
-        String asignatura = scanner.nextLine();
-
-//        for (String asignat : listaAsignaturas) {
-//            if (asignatura.equals(asignat)){
-//                listaAsignaturas.remove(asignat);
-//            }
-//        }
-        listaAsignaturas.removeIf(asignatura::equals);
+    /**
+     * elimina todas las asignaturas de Profesor
+     */
+    public void eliminarAsignaturas() {
+        listaAsignaturas.clear();
     }
 
     @Override
     public String toString() {
-        return "El profesor " + getNombre() + " que imparte los cursos " + curso;
+        return "El profesor " + getNombre() + " con DNI " + getDni() + " teléfono " + getTelefono() + " edad " + getEdad() + " cursos que imparte " + listaAsignaturas;
 
     }
 
@@ -52,13 +54,11 @@ public class Profesor extends Persona {
         return curso;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public boolean isTutor() {
+        return tutor;
     }
 
     public ArrayList<String> getListaAsignaturas() {
         return listaAsignaturas;
     }
-
-
 }

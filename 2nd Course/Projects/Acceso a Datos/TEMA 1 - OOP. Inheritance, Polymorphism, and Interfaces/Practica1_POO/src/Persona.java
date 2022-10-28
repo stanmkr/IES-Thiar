@@ -4,8 +4,8 @@
  * FECHA: Octubre / 2022
  */
 public class Persona {
-    private String nombre, dni;
-    private int telefono, edad;
+    private final String nombre, dni;
+    private final int telefono, edad;
 
 
     // CONSTRUCTOR
@@ -26,31 +26,20 @@ public class Persona {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
 
     public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
 
     public int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+
 }

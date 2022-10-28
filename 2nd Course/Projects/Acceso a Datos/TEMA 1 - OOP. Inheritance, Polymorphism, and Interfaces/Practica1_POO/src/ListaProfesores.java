@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * AUTOR:Stanislav Krastev
@@ -22,20 +20,20 @@ public class ListaProfesores implements ILista {
 
     @Override
     public void anyadir() {
-        System.out.print("Introduce el nomnbre del profesor: ");
+        System.out.print("Introduce el nombre del profesor: ");
         String nombre = scanner.nextLine();
-        System.out.print("Introduce el DNI del alumno: ");
+        System.out.print("\nIntroduce el DNI del alumno: ");
         String dni = scanner.nextLine();
-        System.out.print("Introduce el teléfono del profesor: ");
+        System.out.print("\nIntroduce el teléfono del profesor: ");
         int telefono = Integer.parseInt(scanner.nextLine());
-        System.out.print("Introduce la edad del profesor: ");
+        System.out.print("\nIntroduce la edad del profesor: ");
         int edad = Integer.parseInt(scanner.nextLine());
-        System.out.print("Introduce el curso del profesor: ");
+        System.out.print("\nIntroduce el curso del profesor: ");
         String curso = scanner.nextLine();
-        System.out.print("Introduce si el profesor es tutor true/false (true=SI)(false=NO): ");
+        System.out.print("\nIntroduce si el profesor es tutor true/false (true=SI)(false=NO): ");
         boolean tutor = Boolean.parseBoolean(scanner.nextLine());
         listaProfesores.add(new Profesor(nombre, dni, telefono, edad, curso, tutor));
-        System.out.println("Profesor añadido correctamente...");
+        System.out.println("\nProfesor añadido correctamente...");
     }
 
     /**
@@ -43,6 +41,7 @@ public class ListaProfesores implements ILista {
      */
     @Override
     public void eliminar() {
+        System.out.print("Escribe el DNI del profesor para eliminarlo: ");
         String dni = scanner.nextLine();
         listaProfesores.removeIf(profesor -> profesor.getDni().equals(dni));
     }
@@ -76,7 +75,7 @@ public class ListaProfesores implements ILista {
     /**
      * dado un dni de profesor, elimina todas sus asignaturas de ese profesor
      */
-    public void eliminarAsignaturasProfesor(){
+    public void eliminarAsignaturasProfesor() {
         System.out.print("Introduce el DNI del profesor para eliminar sus asignaturas: ");
         String dni = scanner.nextLine();
         for (Profesor profesor : listaProfesores) {
@@ -87,30 +86,61 @@ public class ListaProfesores implements ILista {
     }
 
     /**
+     * dado un dni de profesor, añade una asignatura a la lista de asignaturas a ese profesor
+     */
+    public void anyadirAsignaturaProfesor() {
+        System.out.print("Introduce el DNI del profesor para añadir una asignatura: ");
+        String dni = scanner.nextLine();
+        for (Profesor profesor : listaProfesores) {
+            if (profesor.getDni().equalsIgnoreCase(dni)) {
+                profesor.anyadirAsignatura();
+            }
+        }
+    }
+
+    /**
      * recorre la lista de profesores y muestra solo los que son tutores
      */
-    public void listarTutores(){
+    public void listarTutores() {
         System.out.println("***** TUTORES *****");
         for (Profesor profesor : listaProfesores) {
-            if (profesor.isTutor()){
+            if (profesor.isTutor()) {
                 System.out.println(profesor);
             }
         }
     }
 
     /**
-     * lista todos los profesores de una asignatrua
+     * lista todos los profesores de una asignatura
      */
-    public void listarPorAsignatura(){
-        HashMap<String,String> asignaturasProfesores = new HashMap<>();
+    public void listarPorAsignatura() {
+        Map<String, ArrayList<String>> asignaturasProfesores = new LinkedHashMap<>();
         for (Profesor profesor : listaProfesores) {
-            asignaturasProfesores.put(profesor.getCurso(), profesor.getNombre());
+            if (!asignaturasProfesores.containsKey(profesor.getCurso())) {
+                asignaturasProfesores.put(profesor.getCurso(), new ArrayList<>());
+                asignaturasProfesores.get(profesor.getCurso()).add(profesor.getNombre());
+            } else {
+                asignaturasProfesores.get(profesor.getCurso()).add(profesor.getNombre());
+            }
         }
-        for (String asignaturas : asignaturasProfesores.keySet()) {
-            System.out.println(asignaturas);
+        for (Map.Entry<String, ArrayList<String>> entry : asignaturasProfesores.entrySet()) {
+            System.out.printf("Curso: %s -> %s%n", entry.getKey(), entry.getValue());
         }
+
+
     }
 
-
-
+    /**
+     * Ordena por orden alfabético (por nombre del profesor)la lista de profesores
+     */
+    public void ordenarAlfabeticamente() {
+        listaProfesores.sort(new Comparator<Profesor>() {
+            @Override
+            public int compare(Profesor o1, Profesor o2) {
+                return o1.getNombre().compareTo(o2.getNombre());
+            }
+        });
+        System.out.println("Profesores ordenados alfabéticamente...");
+    }
 }
+

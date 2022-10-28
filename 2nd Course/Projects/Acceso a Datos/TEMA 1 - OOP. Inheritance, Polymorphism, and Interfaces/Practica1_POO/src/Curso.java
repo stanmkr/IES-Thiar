@@ -4,7 +4,7 @@
  * FECHA: Octubre / 2022
  */
 public class Curso {
-    private String codigo, nombre;
+    private final String codigo, nombre;
 
     // CONSTRUCTOR
     public Curso(String codigo, String nombre) {
@@ -17,17 +17,12 @@ public class Curso {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+
 
     @Override
     public String toString() {

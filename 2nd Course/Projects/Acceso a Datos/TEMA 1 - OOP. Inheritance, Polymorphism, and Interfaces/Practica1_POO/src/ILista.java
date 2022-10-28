@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * AUTOR:Stanislav Krastev
  * PROYECTO: Practica1_POO
@@ -7,13 +5,13 @@ import java.util.ArrayList;
  */
 public interface ILista {
 
-    abstract void anyadir();
+    void anyadir();
 
     void eliminar();
 
     void buscar();
 
-    void listar ();
+    void listar();
 
 
 }

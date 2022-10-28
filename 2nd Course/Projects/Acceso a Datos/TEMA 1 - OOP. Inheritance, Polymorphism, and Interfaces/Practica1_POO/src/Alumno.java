@@ -6,16 +6,16 @@ import java.util.Scanner;
  * PROYECTO: Practica1_POO
  * FECHA: Octubre / 2022
  */
-public class Alumno extends Persona implements Comparable<Alumno> {
+public class Alumno extends Persona {
     Scanner scanner = new Scanner(System.in);
-    private String curso;
+    private final String curso;
     private ArrayList<Double> listaNotas;
 
     // CONSTRUCTOR
-    public Alumno(String nombre, String dni, int telefono, int edad, String curso, ArrayList<Double> listaNotas) {
+    public Alumno(String nombre, String dni, int telefono, int edad, String curso) {
         super(nombre, dni, telefono, edad);
         this.curso = curso;
-        this.listaNotas = listaNotas;
+        this.listaNotas = new ArrayList<>();
     }
 
 
@@ -23,12 +23,17 @@ public class Alumno extends Persona implements Comparable<Alumno> {
 
     /**
      * añade una nota a la lista de notas del objeto alumno
-     *
      */
     public void anyadirNota() {
         System.out.print("Introduce la nota del alumno: ");
         double nota = Double.parseDouble(scanner.nextLine());
-        this.listaNotas.add(nota);
+        if (nota > 0 && nota <= 10) {
+            this.listaNotas.add(nota);
+            System.out.printf("Nota %.2f añadida correctamente...\n", nota);
+
+        }else {
+            System.out.println("La nota debe de ser entre 0 y 10");
+        }
     }
 
     /**
@@ -36,6 +41,7 @@ public class Alumno extends Persona implements Comparable<Alumno> {
      */
     public void eliminarNotas() {
         this.listaNotas.clear();
+        System.out.println("Notas eliminadas correctamente...");
     }
 
     @Override
@@ -48,23 +54,10 @@ public class Alumno extends Persona implements Comparable<Alumno> {
         return curso;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
 
     public ArrayList<Double> getListaNotas() {
         return listaNotas;
     }
 
-    public void setListaNotas(ArrayList<Double> listaNotas) {
-        this.listaNotas = listaNotas;
-    }
 
-
-    @Override
-    public int compareTo(Alumno o) {
-        String a = String.valueOf(this.getNombre());
-        String b = String.valueOf(this.getNombre());
-        return a.compareTo(b);
-    }
 }
