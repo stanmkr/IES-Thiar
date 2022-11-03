@@ -7,9 +7,8 @@ import kotlin.math.pow
  * Date: Octubre / 2022
  *
  */
-class Persona { //Un constructor por defecto.
+class Persona {
 
-    //private val sexo = "Hombre"
     internal var nombre: String = ""
     internal var edad: Int = 0
     internal var DNI: String = ""
@@ -17,10 +16,13 @@ class Persona { //Un constructor por defecto.
     internal var peso: Double = 0.0
     internal var altura: Double = 0.0
 
-    constructor()
+    constructor() // CONSTRUCTOR vacío (por defecto)
 
     // Un constructor con el nombre, edad y sexo, el resto por defecto.
     constructor(nombre: String, edad: Int, sexo: String) {
+        this.nombre = nombre
+        this.edad = edad
+        this.sexo = sexo
         generarDNI()
     }
 
@@ -35,39 +37,66 @@ class Persona { //Un constructor por defecto.
     }
 
     /**
-     * calculara si la persona esta en su peso ideal
+     * Calculará si la persona está en su peso ideal (es necesario que la altura se introduzca en metros)
+     * Devuelve un entero:
+     *
+     * 1 si tiene sobrepeso
+     * -1 si tiene el peso ideal
+     * 0 si está flaco para su estatura
      */
     fun calcularIMC(): Int {
-        val IMC = this.peso / (this.altura.pow(2))
+        val imc = this.peso / (this.altura.pow(2))
         val pesoIdeal = -1
         val porDebajo = 0
         val porEncima = 1
 
-        return if (IMC in 20.0..25.0) {
+        return if (imc in 20.0..25.0) {
             pesoIdeal
-        } else if (IMC > 25) {
+        } else if (imc > 25) {
             porEncima
         } else {
             porDebajo
         }
-
     }
 
     /**
-     * devuelver true o false is es mayor o menor
+     * Función que calculará el peso ideal que recibe como parámetro un número entero, e imprime según el valor recibido (esta función recibirá como parámetro la función de calcular el IMC calcularIMC()
      */
-    fun esMayorDeedad(): Boolean {
-        return this.edad >= 18
+    fun pesoIdeal(calculo: Int) {
+        if (calculo == 1) {
+            println("tiene sobrepeso")
+        } else if (calculo == -1) {
+            println("tiene el peso ideal para su estatura")
+        } else {
+            println("esta muy flaco para su estatura")
+        }
     }
 
-    // comprueba que el sexo introducido es correcto. Si no
-    //es correcto, sera H. No sera visible al exterior.
-    private fun comprobarSexo() {
+    /**
+     * Imprime por pantalla un mensaje según el valor del atributo del objeto que llama a la función true o false is es mayor o menor
+     */
+    fun esMayorDeEdad() {
+        println()
+        if (this.edad >= 18) {
+            println("${this.nombre} es mayor de edad")
+        } else {
+            println("${this.nombre} es menor de edad")
+        }
+    }
+
+    /**
+     *  comprueba que el sexo introducido es correcto. Si no es correcto, pondrá como valor al atributo sexo = "H".
+     */
+
+    fun comprobarSexo() {
         if (this.sexo != "H" && this.sexo != "M") {
             this.sexo = "H"
         }
     }
 
+    /**
+     * Genera un DNI aleatorio, una vez generado asigna el valor del dni aleatorio al atributo DNI del objeto que llama esa función
+     */
     private fun generarDNI() {
         val numero: Int = ThreadLocalRandom.current().nextInt(10000000, 100000000)
         val resto: Int = numero - (numero / 23 * 23)
@@ -78,10 +107,10 @@ class Persona { //Un constructor por defecto.
         this.DNI = dni
     }
 
-    override fun toString(): String {
-        return "Persona(nombre='$nombre', edad=$edad, DNI='$DNI', sexo='$sexo', peso=$peso, altura=$altura)"
-    }
 
+    override fun toString(): String {
+        return "Persona --> NOMBRE: $nombre, EDAD: $edad, DNI: $DNI, SEXO: $sexo, PESO: $peso, ALTURA: $altura"
+    }
 
 
 }
