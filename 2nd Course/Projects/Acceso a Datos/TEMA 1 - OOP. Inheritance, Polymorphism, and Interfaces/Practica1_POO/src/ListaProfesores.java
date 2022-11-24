@@ -13,7 +13,6 @@ public class ListaProfesores implements ILista {
 
     public ListaProfesores() {
         this.listaProfesores = new ArrayList<>();
-
     }
 
     // MÉTODOS
@@ -126,8 +125,6 @@ public class ListaProfesores implements ILista {
         for (Map.Entry<String, ArrayList<String>> entry : asignaturasProfesores.entrySet()) {
             System.out.printf("Curso: %s -> %s%n", entry.getKey(), entry.getValue());
         }
-
-
     }
 
     /**

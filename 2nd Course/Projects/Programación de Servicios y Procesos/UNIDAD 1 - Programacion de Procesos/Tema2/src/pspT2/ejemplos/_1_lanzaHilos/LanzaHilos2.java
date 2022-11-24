@@ -45,21 +45,6 @@ public class LanzaHilos2 {
             }
         }
         System.out.println("Proceso principal terminado");
-/*
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
-
-        try {
-            t1.join();
-            t2.join();
-            t3.join();
-            t4.join();
-        } catch (InterruptedException e) {
-            System.out.println("Proceso interrumpido");
-        }
-        System.out.println("Proceso principal terminado");*/
     }
 
 }

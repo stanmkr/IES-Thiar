@@ -85,12 +85,10 @@ public class ListaCursos implements ILista {
             if (codigoCurso.equalsIgnoreCase(curso.getCodigo())) {
                 for (Alumno alumno : this.arrayAlumnos) {
                     System.out.println(alumno.getNombre());
-                }
-                //  System.out.printf("El alumno %s pertenece al curso %s con código [%s]", alumno.getNombre(), alumno.getCurso(), codigoCurso);
+                }//  System.out.printf("El alumno %s pertenece al curso %s con código [%s]", alumno.getNombre(), alumno.getCurso(), codigoCurso);
             }
         }
     }
-
 
     public ArrayList<Alumno> getArrayAlumnos() {
         return arrayAlumnos;

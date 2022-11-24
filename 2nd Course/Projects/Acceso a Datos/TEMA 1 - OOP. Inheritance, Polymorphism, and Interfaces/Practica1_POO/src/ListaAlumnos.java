@@ -118,6 +118,8 @@ public class ListaAlumnos implements ILista {
     /**
      * pasado un código de curso, se imprimen los alumnos que están en ese curso
      */
+
+
     public void mostrarAlumnosDeUnCurso() {
         System.out.print("Introduce el nombre del curso que quieres buscar: ");
         String nombreCurso = scanner.nextLine();

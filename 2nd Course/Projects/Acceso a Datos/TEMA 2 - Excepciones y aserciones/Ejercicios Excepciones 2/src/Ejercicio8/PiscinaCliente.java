@@ -7,20 +7,20 @@ package Ejercicio8;
  */
 public class PiscinaCliente {
     public static void main(String[] args) {
-        operacionesPiscina(new Piscina(100));
+        operacionesPiscina(new Piscina(500));
     }
 
 
     public static void operacionesPiscina(Piscina piscina) {
         try {
-            for (int i = 1; i < 3; i++) { // llenando la piscina
+            for (int i = 1; i <= 3; i++) { // llenando la piscina
                 int cantidadALlenar = (int  )(Math.random() * 100);
                 System.out.println("Intentando llenar " + cantidadALlenar + " litros.");
                 piscina.llenar(cantidadALlenar);
             }
             System.out.println("El nivel de la piscina es: " + piscina.getNivel() + " litros.\n"); // mostrando su nivel
 
-            for (int i = 1; i < 3; i++) { // vaciando la piscina
+            for (int i = 1; i <= 3; i++) { // vaciando la piscina
                 int cantidadAVaciar = (int  )(Math.random() * 100);
                 System.out.println("Intentado vaciar " + cantidadAVaciar + " litros.");
                 piscina.vaciar(cantidadAVaciar);

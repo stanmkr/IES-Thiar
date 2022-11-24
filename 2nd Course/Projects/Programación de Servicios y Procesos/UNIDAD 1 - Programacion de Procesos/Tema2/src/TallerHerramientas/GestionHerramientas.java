@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class GestionHerramientas {
     static int herramientaAleatoria() {
-        return ThreadLocalRandom.current().nextInt(0, 10);
+        return ThreadLocalRandom.current().nextInt(10);
     }
 
 
@@ -32,10 +32,18 @@ public class GestionHerramientas {
                 herramientas[1] = Herramienta.bancoHerramientas[numeroAleatorio2];
             } while (numeroAleatorio1 == numeroAleatorio2);
         }
+        Herramienta mayor, menor;
+        if (herramientas[0].getId() < herramientas[1].getId()) {
+            mayor = herramientas[1];
+            menor = herramientas[0];
+        }else {
+            menor = herramientas[1];
+            mayor = herramientas[0];
+        }
 
-        synchronized (herramientas[0]) { // sincronizo el 1er objeto Herramienta
-            synchronized (herramientas[1]) { // sincronizo el 2º objeto Herramienta
-                System.out.println("El alumno " + nombreAlumno + " esta usando las herramientas " + herramientas[0].getNombre() + " y " + herramientas[1].getNombre());
+        synchronized (mayor) { // sincronizo el 1er objeto Herramienta
+            synchronized (menor) { // sincronizo el 2º objeto Herramienta
+                System.out.println("El alumno " + nombreAlumno + " esta usando las herramientas " + menor.getNombre() + " y " + mayor.getNombre());
                 try {
                     Thread.sleep(GestionHerramientas.tiempoUsandoHerramienta()); // una vez que el hilo ha terminado, se ejecuta un tiempo de espera aleatorio (entre 2 y 3 segundos)
                     System.out.println("El alumno " + nombreAlumno + " ha terminado con las herramientas.");

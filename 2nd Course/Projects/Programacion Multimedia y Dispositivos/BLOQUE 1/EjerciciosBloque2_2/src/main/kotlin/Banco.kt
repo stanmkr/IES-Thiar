@@ -50,7 +50,7 @@ fun main() {
     println("Has elegido la opción 4 (Salir).\nHasta pronto.")
 }
 
-fun menu() {
+private fun menu() {
     println("\n********** M E N Ú **********")
     println(
         "1.- Ver saldo\n" +

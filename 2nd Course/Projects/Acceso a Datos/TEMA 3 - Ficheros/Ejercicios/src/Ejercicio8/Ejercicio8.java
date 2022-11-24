@@ -38,7 +38,6 @@ public class Ejercicio8 {
                             if (archivo.mkdir()) {
                                 System.out.println("Directorio " + archivo.getAbsolutePath() + " creado correctamente ");
                                 if (j == 2) {
-
                                     ruta = archivo.getAbsolutePath() + "/f" + (j + 1);
                                     archivo = new File(ruta);
                                     try {
@@ -52,20 +51,19 @@ public class Ejercicio8 {
                                         ruta = archivo.getParent() + "/f" + (j + 2);
                                         archivo = new File(ruta);
                                         try {
-                                            if (archivo.createNewFile()){
+                                            if (archivo.createNewFile()) {
                                                 System.out.println("Archivo " + archivo.getAbsolutePath() + " creado correctamente ");
                                                 cantidadArchivos++;
                                             }
                                         } catch (IOException e) {
                                             throw new RuntimeException(e);
                                         }
-
                                     }
                                 }
-                                if ( cantidadArchivos== 2){
-                                    ruta = directorioUsuario.getAbsolutePath()+"/d"+(j+1);
+                                if (cantidadArchivos == 2) {
+                                    ruta = directorioUsuario.getAbsolutePath() + "/d" + (j + 1);
                                     archivo = new File(ruta);
-                                    if (archivo.mkdir()){
+                                    if (archivo.mkdir()) {
                                         System.out.println("Directorio " + archivo.getAbsolutePath() + " creado correctamente ");
                                         j++;
                                         continue;
@@ -85,20 +83,13 @@ public class Ejercicio8 {
 
                             }
                         }
-
-
                     }
-
-
                 } else {
                     System.out.println("No ha sido posible crear el directorio " + directorioUsuario.getAbsolutePath());
                 }
-
-
             }
         } else {
             System.out.println("El directorio " + directorioPrincipal.getAbsolutePath() + " ya existe.");
         }
-
     }
 }

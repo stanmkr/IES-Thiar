@@ -1,4 +1,4 @@
-package Ejercicio1;
+package Ejercicio2;
 
 /**
  * AUTOR:Stanislav Krastev

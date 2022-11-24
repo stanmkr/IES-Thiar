@@ -42,7 +42,6 @@ public class Ej9_Lanzador {
             BufferedReader br = Ej7_UtilidadesFicheros.getBufferedReader(fichero);
             totalTodasVocales += Integer.parseInt(br.readLine());
         }
-
         tFin = System.currentTimeMillis();
         tiempo = tFin - tInicio;
         System.out.println("\nEl tiempo empleado para leer todas las vocales de todos los archivo es: " + tiempo + " milisegunos");

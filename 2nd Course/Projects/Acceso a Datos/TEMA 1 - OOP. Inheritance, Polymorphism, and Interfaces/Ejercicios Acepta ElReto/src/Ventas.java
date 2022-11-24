@@ -22,7 +22,7 @@ public class Ventas {
         while (valor != -1) {
             try {
                 int indiceMayor = 0, indiceMenor = 0;
-                System.out.print("Introduce una cantidad para el " + diasDeLaSemana.get(0)+": ");
+                System.out.print("Introduce una cantidad para el " + diasDeLaSemana.get(0) + ": ");
                 valor = Double.parseDouble(scanner.nextLine());
                 diaMenosVentas = valor;
                 diaMasVentas = valor;
@@ -30,7 +30,7 @@ public class Ventas {
                 boolean esMayor = false, esMenor = false;
 
                 for (int i = 1; i < diasDeLaSemana.size(); i++) {
-                    System.out.print("Introduce una cantidad para el " + diasDeLaSemana.get(i)+": ");
+                    System.out.print("Introduce una cantidad para el " + diasDeLaSemana.get(i) + ": ");
 
                     valor = Double.parseDouble(scanner.nextLine());
                     sumaTotal += valor;
@@ -53,14 +53,14 @@ public class Ventas {
                     System.out.println("EMPATE");
                 } else {
                     boolean domingoMasventas = false;
-                    double mediaSemanal = sumaTotal/6;
+                    double mediaSemanal = sumaTotal / 6;
                     if (mediaSemanal < valor) {
                         domingoMasventas = true;
                     }
                     if (domingoMasventas) {
-                        System.out.printf("\nDia de más ventas: %s\nDía de menos ventas: %s\nSe han hecho más ventas el domingo que la media semanal (%.2f): SI\n",diasDeLaSemana.get(indiceMayor),diasDeLaSemana.get(indiceMenor),mediaSemanal);
+                        System.out.printf("\nDia de más ventas: %s\nDía de menos ventas: %s\nSe han hecho más ventas el domingo que la media semanal (%.2f): SI\n", diasDeLaSemana.get(indiceMayor), diasDeLaSemana.get(indiceMenor), mediaSemanal);
                     } else {
-                        System.out.printf("\nDia de más ventas: %s\nDía de menos ventas: %s\nSe han hecho más ventas el domingo que la media semanal (%.2f): NO\n",diasDeLaSemana.get(indiceMayor),diasDeLaSemana.get(indiceMenor),mediaSemanal);
+                        System.out.printf("\nDia de más ventas: %s\nDía de menos ventas: %s\nSe han hecho más ventas el domingo que la media semanal (%.2f): NO\n", diasDeLaSemana.get(indiceMayor), diasDeLaSemana.get(indiceMenor), mediaSemanal);
                     }
                 }
             } catch (NumberFormatException e) {

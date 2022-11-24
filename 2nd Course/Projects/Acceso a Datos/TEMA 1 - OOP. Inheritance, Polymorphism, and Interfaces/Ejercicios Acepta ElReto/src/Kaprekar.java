@@ -23,13 +23,13 @@ public class Kaprekar {
                 int parte1, parte2;
                 parte1 = Integer.parseInt(numero.substring(0, mitad));
                 parte2 = Integer.parseInt(numero.substring(mitad));
-                if (parte1+parte2==input){
-                    kaprekar=true;
+                if (parte1 + parte2 == input) {
+                    kaprekar = true;
                 }
                 if (kaprekar) {
-                    System.out.printf("SI %d es Kaprekar\n",input);
+                    System.out.printf("SI %d es Kaprekar\n", input);
                 } else {
-                    System.out.printf("NO %d no es Kaprekar\n",input);
+                    System.out.printf("NO %d no es Kaprekar\n", input);
                 }
             }
             System.out.print("\nIntroduce número: ");

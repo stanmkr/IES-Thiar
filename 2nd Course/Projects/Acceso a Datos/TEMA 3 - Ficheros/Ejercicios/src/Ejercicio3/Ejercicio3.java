@@ -1,6 +1,7 @@
 package Ejercicio3;
 
 import java.io.File;
+
 /**
  * AUTOR:Stanislav Krastev
  * PROYECTO: Ejercicios
@@ -10,14 +11,13 @@ public class Ejercicio3 {
     public static void main(String[] args) {
         File directorioActual = new File("");
         String ruta = directorioActual.getAbsolutePath();
-        File [] listaArchivos = new File(ruta).listFiles();
-        
-        if (listaArchivos!=null){
+        File[] listaArchivos = new File(ruta).listFiles();
+
+        if (listaArchivos != null) {
             for (File file : listaArchivos) {
                 if (file.isDirectory()) {
                     System.out.println("\n" + file.getName() + " es un directorio");
-                    File directorioActual2 = file.getAbsoluteFile();
-                    File[] listaArchivos2 = directorioActual2.listFiles();
+                    File[] listaArchivos2 = file.listFiles();
                     if (listaArchivos2 != null) {
                         for (File file2 : listaArchivos2) {
                             if (file2.isDirectory()) {
