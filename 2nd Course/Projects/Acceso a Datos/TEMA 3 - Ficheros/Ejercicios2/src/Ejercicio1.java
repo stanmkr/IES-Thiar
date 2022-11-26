@@ -1,5 +1,3 @@
-package Ejercicio1;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -23,7 +21,7 @@ public class Ejercicio1 {
         vocales.put("O", 0);
         vocales.put("U", 0);
         try {
-            Scanner scanner = new Scanner(new File("texto.txt"));
+            Scanner scanner = new Scanner(new File("Documentos/texto.txt"));
             while (scanner.hasNextLine()) {
                 String linea = scanner.nextLine();
                 for (int i = 0; i < linea.length(); i++) {
