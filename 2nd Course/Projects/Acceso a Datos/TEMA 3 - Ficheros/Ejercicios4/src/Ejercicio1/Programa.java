@@ -1,8 +1,6 @@
 package Ejercicio1;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,17 +25,24 @@ public class Programa {
         //String nombreArchivo = scanner.nextLine();
         String nombreArchivo = "src/Ejercicio1/CarpetaClientes/clientes deudores.txt";
 
-        for (Cliente cliente : listaClientes) {
-            if (cliente.getEstadoCuenta().equals(Cuenta.DEUDOR)){
-                try {
-                   FileOutputStream fileOutputStream = new FileOutputStream(nombreArchivo);
-                    ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-                    objectOutputStream.writeObject(cliente);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+        try {
+            PrintWriter printWriter = new PrintWriter(nombreArchivo);
+          //  FileOutputStream fileOutputStream = new FileOutputStream(nombreArchivo);
+           // ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            for (Cliente cliente : listaClientes) {
+                if (cliente.getEstadoCuenta().equals(Cuenta.DEUDOR)) {
+                    //objectOutputStream.writeObject(cliente);
+                    printWriter.println(cliente);
                 }
             }
+            printWriter.flush();
+            printWriter.close();
+            //objectOutputStream.close();
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+
     }
 }
