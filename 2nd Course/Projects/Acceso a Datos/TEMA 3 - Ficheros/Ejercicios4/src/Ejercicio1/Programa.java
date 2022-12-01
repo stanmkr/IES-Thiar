@@ -1,5 +1,7 @@
 package Ejercicio1;
 
+import Ejercicio2.Alumno;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,26 +25,47 @@ public class Programa {
 
         System.out.println("Introduce el archivo que vas a crear: ");
         //String nombreArchivo = scanner.nextLine();
-        String nombreArchivo = "src/Ejercicio1/CarpetaClientes/clientes deudores.txt";
+        String nombreArchivo = "src/Ejercicio1/CarpetaClientes/clientes deudores.obj";
+
+
+        System.out.println("\n*************** LISTA DE CLIENTES ***************\n");
 
         try {
-            PrintWriter printWriter = new PrintWriter(nombreArchivo);
-          //  FileOutputStream fileOutputStream = new FileOutputStream(nombreArchivo);
-           // ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+          FileOutputStream fileOutputStream = new FileOutputStream(nombreArchivo);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             for (Cliente cliente : listaClientes) {
-                if (cliente.getEstadoCuenta().equals(Cuenta.DEUDOR)) {
-                    //objectOutputStream.writeObject(cliente);
-                    printWriter.println(cliente);
-                }
+                objectOutputStream.writeObject(cliente);
+                System.out.println(cliente);
             }
-            printWriter.flush();
-            printWriter.close();
-            //objectOutputStream.close();
-
+            objectOutputStream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+
+
+        System.out.println("\n*************** CLIENTES DEUDORES ***************\n");
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(nombreArchivo);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            Cliente cliente = (Cliente) objectInputStream.readObject();
+            while (cliente!=null){
+                if (cliente.getEstadoCuenta().equals(Cuenta.DEUDOR)){
+                    System.out.println(cliente);
+                }
+                try {
+                    cliente = (Cliente) objectInputStream.readObject();
+
+                }catch (EOFException e){
+                    break;
+                }
+            }
+            objectInputStream.close();
+
+        } catch (ClassNotFoundException | IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

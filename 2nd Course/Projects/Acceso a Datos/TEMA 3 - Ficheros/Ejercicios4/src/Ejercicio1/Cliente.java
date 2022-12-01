@@ -31,6 +31,6 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "CLIENTE: " + nombre + " .... ID: " + numCliente + "  .... DIRECCIÓN: " + direccion + " .... SALDO: " + saldo + " .... ESTADO DE LA CUENTA BANCARIA: " + estadoCuenta;
+        return "CLIENTE: " + nombre + " .... ID: " + numCliente + "  .... DIRECCION: " + direccion + " .... SALDO: " + saldo + " .... ESTADO DE LA CUENTA BANCARIA: " + estadoCuenta;
     }
 }
