@@ -10,14 +10,15 @@ import java.util.ArrayList;
 public class ControlArchivo {
 
     public static ArrayList<Cliente> listaClientes = new ArrayList<>();
+
     //FacturaciónAddCliente f = new FacturaciónAddCliente();
     public static void anyadir(String DNI, String nombreCliente, String direccionCliente, double saldo) {
-        if (saldo == 0){
-            ControlArchivo.listaClientes.add(new Cliente(DNI,nombreCliente,direccionCliente,saldo,"al dia"));
+        if (saldo == 0) {
+            ControlArchivo.listaClientes.add(new Cliente(DNI, nombreCliente, direccionCliente, saldo, "al dia"));
         } else if (saldo < 0) {
-            ControlArchivo.listaClientes.add(new Cliente(DNI,nombreCliente,direccionCliente,saldo,"deudor"));
-        }else {
-            ControlArchivo.listaClientes.add(new Cliente(DNI,nombreCliente,direccionCliente,saldo,"positivo"));
+            ControlArchivo.listaClientes.add(new Cliente(DNI, nombreCliente, direccionCliente, saldo, "deudor"));
+        } else {
+            ControlArchivo.listaClientes.add(new Cliente(DNI, nombreCliente, direccionCliente, saldo, "positivo"));
         }
 
     }

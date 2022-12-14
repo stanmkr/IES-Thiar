@@ -33,4 +33,25 @@ public class Cliente implements Serializable {
         this.saldo = saldo;
         this.estado_cuenta = estado_cuenta;
     }
+
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getEstado_cuenta() {
+        return estado_cuenta;
+    }
 }

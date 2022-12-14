@@ -68,9 +68,10 @@ public class FacturacionAddCliente {
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(archivo);
                     ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-                    for (Cliente cliente : ControlArchivo.listaClientes) {
-                        objectOutputStream.writeObject(cliente);
-                    }
+                    objectOutputStream.writeObject(ControlArchivo.listaClientes);
+//                    for (Cliente cliente : ControlArchivo.listaClientes) {
+//                        objectOutputStream.writeObject(cliente);
+//                    }
                     objectOutputStream.close();
                     System.out.println("Los clientes han sido guardados correctamente en " + archivo.getAbsolutePath());
                 } catch (IOException ex) {
