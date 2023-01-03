@@ -25,13 +25,16 @@ public class AppPresionArterial {
     public AppPresionArterial() {
 
 
-
         // LISTENER DEL BOTÓN "CALCULAR"
         botonCalcular.addActionListener(e -> {
 
             try {
-                if (!inputPulsaciones.getText().equals("")) {
-                    JOptionPane.showMessageDialog(getPanelGeneral(), diagnosticoPulso(Integer.parseInt(inputPulsaciones.getText())), "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                if (!inputPulsaciones.getText().equals("") && Integer.parseInt(inputPulsaciones.getText()) > 0) {
+                    switchPulso(diagnosticoPulso(Integer.parseInt(inputPulsaciones.getText()), atletaCheckBox.isSelected()), Integer.parseInt(inputPulsaciones.getText()));
+                    //JOptionPane.showMessageDialog(getPanelGeneral(), diagnosticoPulso(Integer.parseInt(inputPulsaciones.getText())), "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                } else if (!inputPulsaciones.getText().equals("") && Integer.parseInt(inputPulsaciones.getText()) < 0) {
+                    JOptionPane.showMessageDialog(getPanelGeneral(), "Atención, pulsaciones negativas", "Atención", JOptionPane.ERROR_MESSAGE);
+                    inputPulsaciones.setText("");
                 } else {
                     JOptionPane.showMessageDialog(getPanelGeneral(), "Debes de introducir unas pulsaciones", "Atención", JOptionPane.ERROR_MESSAGE);
                 }
@@ -42,11 +45,14 @@ public class AppPresionArterial {
             }
 
             try {
-                if (!inputTemperatura.getText().equals("")) {
+                if (!inputTemperatura.getText().equals("") && Integer.parseInt(inputTemperatura.getText()) > 0) {
                     JOptionPane.showMessageDialog(getPanelGeneral(), diagnosticoTemperatura(Double.parseDouble(inputTemperatura.getText())), "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                } else if (!inputTemperatura.getText().equals("") && Integer.parseInt(inputTemperatura.getText()) < 0) {
+
+                    JOptionPane.showMessageDialog(getPanelGeneral(), "Atención, temperatura negativa", "Atención", JOptionPane.ERROR_MESSAGE);
+                    inputTemperatura.setText("");
                 } else {
                     JOptionPane.showMessageDialog(getPanelGeneral(), "Debes de introducir una temperatura", "Atención", JOptionPane.ERROR_MESSAGE);
-
                 }
             } catch (NumberFormatException exception) {
                 System.err.println("El usuario ha introducido un valor no numérico en la casilla de Temperatura");
@@ -65,21 +71,53 @@ public class AppPresionArterial {
     }
 
 
-    public  String diagnosticoPulso(int pulsaciones) {
-        if (pulsaciones < 60 && !atletaCheckBox.isSelected()) {
-            return "El paciente esta por debajo de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
-        } else if (pulsaciones > 100 && !this.atletaCheckBox.isSelected()) {
-            return "El paciente esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
-        } else if (pulsaciones >= 60 && pulsaciones <= 100 && !atletaCheckBox.isSelected()) {
-            return "El paciente esta en reposo, tiene " + pulsaciones + " latidos por minuto";
-        } else if (pulsaciones < 40 && atletaCheckBox.isSelected()) {
-            return "El paciente (Atleta) esta por debajo de las pulsaciones en reposo, tiene " + pulsaciones + " latidos por minuto";
-        } else if (pulsaciones > 60 && atletaCheckBox.isSelected()) {
-            return "El paciente (Atleta) esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
-        } else {
-            return "El paciente (Atleta) esta en reposo con unas pulsaciones de " + pulsaciones + " latidos por minuto";
+    public void switchPulso(int inputUser, int pulsaciones) {
+        switch (inputUser) {
+            case 0:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente esta por debajo de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 1:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente esta en reposo, tiene " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente (Atleta) esta por debajo de las pulsaciones en reposo, tiene " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 4:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente (Atleta) esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 5:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente (Atleta) esta en reposo con unas pulsaciones de " + pulsaciones + " latidos por minuto", "Pulsaciones", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            default:
+
         }
     }
+
+    public int diagnosticoPulso(int pulsaciones, boolean atletaCheckBox) {
+        if (pulsaciones < 60 && !atletaCheckBox) {
+            return 0;
+            // return "El paciente esta por debajo de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
+        } else if (pulsaciones > 100 && !atletaCheckBox) {
+            return 1;
+            // return "El paciente esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
+        } else if (pulsaciones >= 60 && pulsaciones <= 100 && !atletaCheckBox) {
+            return 2;
+            // return "El paciente esta en reposo, tiene " + pulsaciones + " latidos por minuto";
+        } else if (pulsaciones < 40 && atletaCheckBox) {
+            return 3;
+            // return "El paciente (Atleta) esta por debajo de las pulsaciones en reposo, tiene " + pulsaciones + " latidos por minuto";
+        } else if (pulsaciones > 60 && atletaCheckBox) {
+            return 4;
+            // return "El paciente (Atleta) esta por encima de las pulsaciones de reposo, tiene " + pulsaciones + " latidos por minuto";
+        } else {
+            return 5;
+            // return "El paciente (Atleta) esta en reposo con unas pulsaciones de " + pulsaciones + " latidos por minuto";
+        }
+    }
+
 
     /**
      * Método que dada una temperatura como parámetro calcula el estado en el que se encuentra el paciente según el rango de la temperatura
