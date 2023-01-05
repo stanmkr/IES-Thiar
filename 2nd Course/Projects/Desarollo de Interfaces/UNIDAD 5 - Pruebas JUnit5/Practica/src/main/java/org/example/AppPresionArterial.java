@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.print.DocFlavor;
 import javax.swing.*;
 
 /**
@@ -28,6 +29,7 @@ public class AppPresionArterial {
         // LISTENER DEL BOTÓN "CALCULAR"
         botonCalcular.addActionListener(e -> {
 
+            // PULSO CARDÍACO ---------------------------------------------------------
             try {
                 if (!inputPulsaciones.getText().equals("") && Integer.parseInt(inputPulsaciones.getText()) > 0) {
                     switchPulso(diagnosticoPulso(Integer.parseInt(inputPulsaciones.getText()), atletaCheckBox.isSelected()), Integer.parseInt(inputPulsaciones.getText()));
@@ -44,11 +46,12 @@ public class AppPresionArterial {
                 inputPulsaciones.setText("");
             }
 
+            // TEMPERATURA ---------------------------------------------------------
             try {
-                if (!inputTemperatura.getText().equals("") && Integer.parseInt(inputTemperatura.getText()) > 0) {
-                    JOptionPane.showMessageDialog(getPanelGeneral(), diagnosticoTemperatura(Double.parseDouble(inputTemperatura.getText())), "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                if (!inputTemperatura.getText().equals("") && Double.parseDouble(inputTemperatura.getText()) > 0) {
+                    switchTemperatura(diagnosticoTemperatura(Double.parseDouble(inputTemperatura.getText())), Double.parseDouble(inputTemperatura.getText()));
+                    //JOptionPane.showMessageDialog(getPanelGeneral(), diagnosticoTemperatura(Double.parseDouble(inputTemperatura.getText())), "Temperatura", JOptionPane.INFORMATION_MESSAGE);
                 } else if (!inputTemperatura.getText().equals("") && Integer.parseInt(inputTemperatura.getText()) < 0) {
-
                     JOptionPane.showMessageDialog(getPanelGeneral(), "Atención, temperatura negativa", "Atención", JOptionPane.ERROR_MESSAGE);
                     inputTemperatura.setText("");
                 } else {
@@ -96,6 +99,25 @@ public class AppPresionArterial {
         }
     }
 
+
+    public void switchTemperatura(int inputUser, double temperatura) {
+        switch (inputUser) {
+            case 0:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente sufre de hipotermia con una temperatura de " + temperatura + " ºC", "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 1:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente se encuentra en un rango normal temperatura, tiene " + temperatura + " ºC", "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente sufre de febrícula, tiene una temperatura  de " + temperatura + " ºC", "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(getPanelGeneral(), "El paciente tiene fiebre, la temperatura es de " + temperatura + " ºC", "Temperatura", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            default:
+        }
+    }
+
     public int diagnosticoPulso(int pulsaciones, boolean atletaCheckBox) {
         if (pulsaciones < 60 && !atletaCheckBox) {
             return 0;
@@ -125,15 +147,19 @@ public class AppPresionArterial {
      * @param temperatura la temperatura introducida por el usuario
      * @return Un texto con el estado del paciente
      */
-    public static String diagnosticoTemperatura(double temperatura) {
+    public static int diagnosticoTemperatura(double temperatura) {
         if (temperatura < 35.5) {
-            return "El paciente sufre de hipotermia con una temperatura de " + temperatura + " ºC";
+            return 0;
+            //return "El paciente sufre de hipotermia con una temperatura de " + temperatura + " ºC";
         } else if (temperatura >= 35.5 && temperatura < 37.5) {
-            return "El paciente se encuentra en un rango normal temperatura, tiene " + temperatura + " ºC";
+            return 1;
+            //return "El paciente se encuentra en un rango normal temperatura, tiene " + temperatura + " ºC";
         } else if (temperatura >= 37.5 && temperatura <= 38.0) {
-            return "El paciente sufre de febrícula, tiene una temperatura  de " + temperatura + " ºC";
+            return 2;
+            //return "El paciente sufre de febrícula, tiene una temperatura  de " + temperatura + " ºC";
         } else {
-            return "El paciente tiene fiebre, la temperatura es de " + temperatura + " ºC";
+            return 3;
+            //return "El paciente tiene fiebre, la temperatura es de " + temperatura + " ºC";
         }
     }
 
