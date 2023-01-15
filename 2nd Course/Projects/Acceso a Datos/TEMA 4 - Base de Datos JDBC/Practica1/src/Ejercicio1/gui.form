@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Ejercicio1.gui">
+  <grid id="27dc6" binding="panelSuperior" layout-manager="GridLayoutManager" row-count="6" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="15" left="15" bottom="15" right="15"/>
+    <constraints>
+      <xy x="20" y="20" width="891" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <scrollpane id="effe0">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="9" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="93671" class="javax.swing.JTextPane" binding="txtPanel">
+            <constraints/>
+            <properties>
+              <editable value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="6877d" binding="panelGeneral" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="9" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="115e7" class="javax.swing.JButton" binding="btnVerDatosActionPerformed">
+            <constraints/>
+            <properties>
+              <background color="-13729612"/>
+              <font size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="VER DATOS TRABAJADOR"/>
+            </properties>
+          </component>
+          <component id="36164" class="javax.swing.JButton" binding="btnTodosActionPerformed">
+            <constraints/>
+            <properties>
+              <background color="-13729612"/>
+              <font size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="VER TODOS LOS TRABAJADORES"/>
+            </properties>
+          </component>
+          <component id="26e2f" class="javax.swing.JButton" binding="btnServiciosActionPerformed">
+            <constraints/>
+            <properties>
+              <background color="-13729612"/>
+              <font size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="VER DATOS SERVICIOS"/>
+            </properties>
+          </component>
+          <component id="fac2" class="javax.swing.JButton" binding="btnClientes">
+            <constraints/>
+            <properties>
+              <background color="-13729612"/>
+              <font size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="VER DATOS CLIENTES"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="fb2f2" binding="panelSueldo" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="9" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="a673a" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="16" style="1"/>
+              <text value="Sueldo:"/>
+            </properties>
+          </component>
+          <component id="219b0" class="javax.swing.JTextField" binding="txtSueldo">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <preferred-size width="150" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <toolTipText value="Introduce el sueldo"/>
+            </properties>
+          </component>
+          <component id="58c9c" class="javax.swing.JButton" binding="btnIgual">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Igual"/>
+            </properties>
+          </component>
+          <component id="8c34a" class="javax.swing.JButton" binding="btnMayor">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Mayor que"/>
+            </properties>
+          </component>
+          <component id="eb8c6" class="javax.swing.JButton" binding="btnMenor">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Menor que"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="ca744" binding="panelNombre" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="9" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="aef6e" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="16" style="1"/>
+              <text value="Nombre:"/>
+            </properties>
+          </component>
+          <component id="54072" class="javax.swing.JTextField" binding="txtNombre">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <preferred-size width="150" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <toolTipText value="Introduce el nombre o parte de el"/>
+            </properties>
+          </component>
+          <component id="8228b" class="javax.swing.JButton" binding="btnNombreIgual">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Igual a"/>
+            </properties>
+          </component>
+          <component id="23c28" class="javax.swing.JButton" binding="btnContiene">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Contiene a"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="714ac" binding="panelFecha" layout-manager="GridLayoutManager" row-count="1" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="43297" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="16" style="1"/>
+              <text value="Fecha:"/>
+            </properties>
+          </component>
+          <component id="afefb" class="javax.swing.JTextField" binding="txtAnio">
+            <constraints>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <preferred-size width="50" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <toolTipText value="Año"/>
+            </properties>
+          </component>
+          <component id="373c2" class="javax.swing.JTextField" binding="txtMes">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false">
+                <preferred-size width="25" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <toolTipText value="Mes"/>
+            </properties>
+          </component>
+          <component id="cd329" class="javax.swing.JButton" binding="btnAnterior">
+            <constraints>
+              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Anterior"/>
+            </properties>
+          </component>
+          <component id="988e0" class="javax.swing.JButton" binding="btnDespues">
+            <constraints>
+              <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-15572307"/>
+              <foreground color="-1"/>
+              <text value="Después"/>
+            </properties>
+          </component>
+          <component id="2cbd9" class="javax.swing.JTextField" binding="txtDia">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="25" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <toolTipText value="Día"/>
+            </properties>
+          </component>
+          <component id="318f6" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="-"/>
+            </properties>
+          </component>
+          <component id="340f4" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="-"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
