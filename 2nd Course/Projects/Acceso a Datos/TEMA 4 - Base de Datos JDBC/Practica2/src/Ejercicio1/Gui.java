@@ -1,8 +1,6 @@
 package Ejercicio1;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * AUTOR:Stanislav Krastev
@@ -47,6 +45,9 @@ public class Gui {
         btnEliminar.addActionListener(e -> {
             AccesoBD.btnEliminarActionPerformed(e);
         });
+
+
+
     }
 
     public JPanel getPanelGeneral() {
@@ -83,6 +84,11 @@ public class Gui {
 
     public JTextField getTxtMes() {
         return txtMes;
+    }
+
+
+    public JTextField getTxtDNIEliminar() {
+        return txtDNIEliminar;
     }
 
     public static void main(String[] args) {

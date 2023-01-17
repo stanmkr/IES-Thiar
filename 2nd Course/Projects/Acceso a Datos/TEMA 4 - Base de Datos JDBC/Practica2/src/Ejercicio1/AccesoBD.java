@@ -61,11 +61,11 @@ public class AccesoBD {
 
     public static void mostrarTodos() {
         String info = "";
-        String cadDNI,cadNombre, cadApell, cadSueldo, cadFecha,cadMat;
+        String cadDNI, cadNombre, cadApell, cadSueldo, cadFecha, cadMat;
         try {
             ResultSet r = sentencia.executeQuery("select * from trabajadores order by sueldo");
             while (r.next()) {
-                cadDNI=r.getString("DNI");
+                cadDNI = r.getString("DNI");
                 cadNombre = r.getString("nombre");
                 cadApell = r.getString("apellidos");
                 cadSueldo = r.getString("sueldo");
@@ -73,7 +73,7 @@ public class AccesoBD {
                 cadFecha = r.getString("fecha");
                 cadFecha = cadFecha.substring(8, 10) + "/" + cadFecha.substring(5, 7) + "/" + cadFecha.substring(0, 4);
                 cadMat = r.getString("matricula");
-                info = info + cadDNI + " -- "+cadNombre + " " + cadApell + " -- " + cadSueldo + " -- " + cadFecha + " -- " + cadMat + "\n";
+                info = info + cadDNI + " -- " + cadNombre + " " + cadApell + " -- " + cadSueldo + " -- " + cadFecha + " -- " + cadMat + "\n";
             }
 
             ventanaPrincipal.getPanelTexto().setText("");
@@ -105,13 +105,25 @@ public class AccesoBD {
 
     public static void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
         String consulta = "";
-        String dni="";
         int respuesta; // respuesta a pregunta de confirmación
         try {
+            //consulta = "select * FROM trabajadores where DNI='" + ventanaPrincipal.getTxtDNIEliminar().getText() + "'";
+            respuesta = JOptionPane.showConfirmDialog(null, "¿Confirmas el borrado?", "Borrar trabajador", JOptionPane.YES_NO_OPTION);
+            if (respuesta == JOptionPane.YES_OPTION) {
+                consulta = "DELETE FROM trabajadores where DNI='" + ventanaPrincipal.getTxtDNIEliminar().getText() + "'";
+               // sentencia.executeUpdate(consulta);
+                if (sentencia.executeUpdate(consulta) == 0){
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado el trabajador con el DNI: " + ventanaPrincipal.getTxtDNIEliminar().getText());
+                }else {
+                    JOptionPane.showMessageDialog(null, "Trabajador con DNI: " + ventanaPrincipal.getTxtDNIEliminar().getText() + " eliminado correctamente.");
+                    mostrarTodos();
+                }
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al introducir el nuevo trabajador");
+            JOptionPane.showMessageDialog(null, "Error al eliminar el trabajador");
         }
     }
 
