@@ -31,7 +31,7 @@ public class AccesoBD {
         Gui.ventanaPrincipal = new JFrame();
         Gui.ventanaPrincipal.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Gui.ventanaPrincipal.setTitle("Ejercicio 1 | Stanislav Krastev");
-        Gui.ventanaPrincipal.setSize(550, 600);
+        Gui.ventanaPrincipal.setSize(850, 600);
         Gui.ventanaPrincipal.setVisible(true);
         Gui.ventanaPrincipal.setLocationRelativeTo(null);
         Gui.ventanaPrincipal.getContentPane().add(ventanaPrincipal.getPanelGeneral());
@@ -111,10 +111,10 @@ public class AccesoBD {
             respuesta = JOptionPane.showConfirmDialog(null, "¿Confirmas el borrado?", "Borrar trabajador", JOptionPane.YES_NO_OPTION);
             if (respuesta == JOptionPane.YES_OPTION) {
                 consulta = "DELETE FROM trabajadores where DNI='" + ventanaPrincipal.getTxtDNIEliminar().getText() + "'";
-               // sentencia.executeUpdate(consulta);
-                if (sentencia.executeUpdate(consulta) == 0){
+                // sentencia.executeUpdate(consulta);
+                if (sentencia.executeUpdate(consulta) == 0) {
                     JOptionPane.showMessageDialog(null, "No se ha encontrado el trabajador con el DNI: " + ventanaPrincipal.getTxtDNIEliminar().getText());
-                }else {
+                } else {
                     JOptionPane.showMessageDialog(null, "Trabajador con DNI: " + ventanaPrincipal.getTxtDNIEliminar().getText() + " eliminado correctamente.");
                     mostrarTodos();
                 }
@@ -125,6 +125,40 @@ public class AccesoBD {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al eliminar el trabajador");
         }
+    }
+
+
+    public static void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {
+        String cadDni = "";
+        String consulta = "";
+        String cadDia, cadMes, cadAnio, cadFe;
+        try {
+            consulta = "select * from trabajadores where DNI = '" + ventanaPrincipal.getTxtModDNI().getText() + "'";
+            ResultSet r = sentencia.executeQuery(consulta);
+            if (!r.isBeforeFirst()) {
+                JOptionPane.showMessageDialog(null, "No existe trabajador con ese DNI");
+            } else {
+                while (r.next()) {
+                    ventanaPrincipal.getTxtModNombre().setText(r.getString("nombre"));
+                    ventanaPrincipal.getTxtModApellidos().setText(r.getString("apellidos"));
+                    ventanaPrincipal.getTxtModSueldo().setText(r.getString("sueldo"));
+                    cadFe = r.getString("fecha");
+                    cadDia = cadFe.substring(8, 10);
+                    cadMes = cadFe.substring(5, 7);
+                    cadAnio = cadFe.substring(0, 4);
+                    ventanaPrincipal.getTxtModDia().setText(cadDia);
+                    ventanaPrincipal.getTxtModMes().setText(cadMes);
+                    ventanaPrincipal.getTxtModAnio().setText(cadAnio);
+                    ventanaPrincipal.getTxtModAnio().setText(cadAnio);
+                    ventanaPrincipal.getTxtModMes().setText(cadMes);
+                    ventanaPrincipal.getTxtModDia().setText(cadDia);
+                    ventanaPrincipal.getTxtModMatricula().setText(r.getString("matricula"));
+                }
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar el trabajador");
+        }
+
     }
 
 

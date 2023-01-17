@@ -1,6 +1,8 @@
 package Ejercicio1;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * AUTOR:Stanislav Krastev
@@ -25,6 +27,17 @@ public class Gui {
     private JPanel panelBajas;
     private JButton btnEliminar;
     private JTextField txtDNIEliminar;
+    private JPanel panelModificar;
+    private JButton btnModficar;
+    private JTextField txtModDNI;
+    private JTextField txtModNombre;
+    private JTextField txtModApellidos;
+    private JTextField txtModSueldo;
+    private JTextField txtModDia;
+    private JTextField txtModMes;
+    private JTextField txtModAnio;
+    private JTextField txtModMatricula;
+    private JButton btnBuscar;
     static JFrame ventanaPrincipal;
 
     public JTextPane getPanelTexto() {
@@ -47,7 +60,14 @@ public class Gui {
         });
 
 
+        btnModficar.addActionListener(e -> {
 
+        });
+
+
+        btnBuscar.addActionListener(e -> {
+            AccesoBD.btnBuscarActionPerformed(e);
+        });
     }
 
     public JPanel getPanelGeneral() {
@@ -86,6 +106,38 @@ public class Gui {
         return txtMes;
     }
 
+
+    public JTextField getTxtModDNI() {
+        return txtModDNI;
+    }
+
+    public JTextField getTxtModNombre() {
+        return txtModNombre;
+    }
+
+    public JTextField getTxtModApellidos() {
+        return txtModApellidos;
+    }
+
+    public JTextField getTxtModSueldo() {
+        return txtModSueldo;
+    }
+
+    public JTextField getTxtModDia() {
+        return txtModDia;
+    }
+
+    public JTextField getTxtModMes() {
+        return txtModMes;
+    }
+
+    public JTextField getTxtModAnio() {
+        return txtModAnio;
+    }
+
+    public JTextField getTxtModMatricula() {
+        return txtModMatricula;
+    }
 
     public JTextField getTxtDNIEliminar() {
         return txtDNIEliminar;
