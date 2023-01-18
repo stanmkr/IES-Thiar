@@ -103,9 +103,8 @@ public class AccesoBD {
 
     public static void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
         String consulta = "";
-        int respuesta; // respuesta a pregunta de confirmación
+        int respuesta;
         try {
-            //consulta = "select * FROM trabajadores where DNI='" + ventanaPrincipal.getTxtDNIEliminar().getText() + "'";
             respuesta = JOptionPane.showConfirmDialog(null, "¿Confirmas el borrado?", "Borrar trabajador", JOptionPane.YES_NO_OPTION);
             if (respuesta == JOptionPane.YES_OPTION) {
                 consulta = "DELETE FROM trabajadores where DNI='" + ventanaPrincipal.getTxtDNIEliminar().getText() + "'";
