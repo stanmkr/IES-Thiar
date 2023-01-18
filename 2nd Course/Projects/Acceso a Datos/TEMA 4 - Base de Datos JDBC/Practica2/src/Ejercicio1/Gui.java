@@ -61,7 +61,7 @@ public class Gui {
 
 
         btnModficar.addActionListener(e -> {
-
+            AccesoBD.btnModificarActionPerformed(e);
         });
 
 

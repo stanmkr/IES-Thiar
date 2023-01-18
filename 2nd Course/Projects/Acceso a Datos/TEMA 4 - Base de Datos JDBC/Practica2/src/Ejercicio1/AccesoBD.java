@@ -93,7 +93,6 @@ public class AccesoBD {
             consulta += ventanaPrincipal.getTxtSueldo().getText() + ",";
             consulta += "'" + ventanaPrincipal.getTxtAnio().getText() + "-" + ventanaPrincipal.getTxtMes().getText() + "-" + ventanaPrincipal.getTxtDia().getText() + "',";
             consulta += "'" + ventanaPrincipal.getTxtMatricula().getText() + "')";
-            System.out.println(consulta);
             sentencia.executeUpdate(consulta);
             JOptionPane.showMessageDialog(null, "Trabajador introducido correctamente.");
             mostrarTodos();
@@ -159,6 +158,28 @@ public class AccesoBD {
             JOptionPane.showMessageDialog(null, "Error al buscar el trabajador");
         }
 
+    }
+
+
+    public static void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {
+        String cadDni = "";
+        String consulta = "";
+        //String cadDia, cadMes, cadAnio, cadFe;
+        try {
+            consulta = "update trabajadores set ";
+            consulta = consulta +"nombre='" + ventanaPrincipal.getTxtModNombre().getText()+"', ";
+            consulta = consulta +"apellidos='" + ventanaPrincipal.getTxtModApellidos().getText()+"', ";
+            consulta = consulta +"sueldo=" + ventanaPrincipal.getTxtModSueldo().getText()+", ";
+            consulta = consulta +"fecha='" + ventanaPrincipal.getTxtModAnio().getText() + "-" + ventanaPrincipal.getTxtModMes().getText() + "-" + ventanaPrincipal.getTxtModDia().getText() + "', ";
+            consulta = consulta +"matricula='" + ventanaPrincipal.getTxtModMatricula().getText()+"'";
+            consulta = consulta +"WHERE DNI='" + ventanaPrincipal.getTxtModDNI().getText()+"'";
+            sentencia.executeUpdate(consulta);
+            JOptionPane.showMessageDialog(null, "Trabajador modificado correctamente.");
+
+            mostrarTodos();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar el trabajador");
+        }
     }
 
 
