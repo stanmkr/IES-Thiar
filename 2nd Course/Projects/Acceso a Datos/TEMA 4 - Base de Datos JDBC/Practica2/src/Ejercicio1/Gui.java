@@ -1,9 +1,6 @@
 package Ejercicio1;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  * AUTOR:Stanislav Krastev
  * PROYECTO: Practica2
@@ -49,21 +46,17 @@ public class Gui {
             AccesoBD.btnTrabajadoresActionPerformed(e);
         });
 
-
         altaButton.addActionListener(e -> {
             AccesoBD.btnAltaActionPerformed(e);
         });
-
 
         btnEliminar.addActionListener(e -> {
             AccesoBD.btnEliminarActionPerformed(e);
         });
 
-
         btnModficar.addActionListener(e -> {
             AccesoBD.btnModificarActionPerformed(e);
         });
-
 
         btnBuscar.addActionListener(e -> {
             AccesoBD.btnBuscarActionPerformed(e);

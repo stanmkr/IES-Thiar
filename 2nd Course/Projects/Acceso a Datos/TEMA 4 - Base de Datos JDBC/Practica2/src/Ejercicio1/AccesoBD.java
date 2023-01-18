@@ -75,7 +75,6 @@ public class AccesoBD {
                 cadMat = r.getString("matricula");
                 info = info + cadDNI + " -- " + cadNombre + " " + cadApell + " -- " + cadSueldo + " -- " + cadFecha + " -- " + cadMat + "\n";
             }
-
             ventanaPrincipal.getPanelTexto().setText("");
             ventanaPrincipal.getPanelTexto().setText(info);
         } catch (Exception e) {
@@ -118,8 +117,6 @@ public class AccesoBD {
                     mostrarTodos();
                 }
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al eliminar el trabajador");
@@ -157,7 +154,6 @@ public class AccesoBD {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al buscar el trabajador");
         }
-
     }
 
 
@@ -175,12 +171,9 @@ public class AccesoBD {
             consulta = consulta +"WHERE DNI='" + ventanaPrincipal.getTxtModDNI().getText()+"'";
             sentencia.executeUpdate(consulta);
             JOptionPane.showMessageDialog(null, "Trabajador modificado correctamente.");
-
             mostrarTodos();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar el trabajador");
         }
     }
-
-
 }
