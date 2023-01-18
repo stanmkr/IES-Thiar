@@ -157,7 +157,6 @@ public class AccesoBD {
 
 
     public static void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {
-        String cadDni = "";
         String consulta = "";
         //String cadDia, cadMes, cadAnio, cadFe;
         try {
