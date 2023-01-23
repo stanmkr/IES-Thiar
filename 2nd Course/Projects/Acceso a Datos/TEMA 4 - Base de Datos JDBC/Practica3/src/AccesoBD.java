@@ -1,6 +1,3 @@
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.event.WindowEvent;
 import java.sql.*;
 
 /**

@@ -15,14 +15,28 @@ public class Gui {
     private JFrame ventanaPrincipal;
     private JTable tabla;
     private JPanel panelAcciones;
+    private JButton nuevoButton;
+    private JButton btnModificar;
     private DefaultTableModel model;
     private String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
+    private JDialog dialogoNuevo;
+
 
 
     public Gui() {
+        dialogoNuevo = new Dialogo();
         prepararTabla(tabla);
         btnEliminar.addActionListener(e -> {
             btnEliminarActionPerformed(e);
+        });
+
+
+        nuevoButton.addActionListener(e -> {
+            dialogoNuevo.setSize(500,400);
+            dialogoNuevo.setModal(true);
+            dialogoNuevo.setLocationRelativeTo(null);
+            dialogoNuevo.setVisible(true);
+            mostrarTrabajadores();
         });
     }
 
