@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Dialogo extends JDialog {
+public class DialogoNuevo extends JDialog {
     private JPanel contentPane;
     private JTextField txtNuevoDni;
     private JTextField txtNuevoNombre;
@@ -16,7 +16,7 @@ public class Dialogo extends JDialog {
     private JPanel panelNuevoTrabajador;
     private JPanel panelNuevoBotones;
 
-    public Dialogo() {
+    public DialogoNuevo() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(btnNuevoAceptar);
@@ -77,7 +77,7 @@ public class Dialogo extends JDialog {
     }
 
     public static void main(String[] args) {
-        Dialogo dialog = new Dialogo();
+        DialogoNuevo dialog = new DialogoNuevo();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

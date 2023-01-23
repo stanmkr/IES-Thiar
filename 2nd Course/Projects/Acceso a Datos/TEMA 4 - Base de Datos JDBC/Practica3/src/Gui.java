@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,11 +22,13 @@ public class Gui {
     private DefaultTableModel model;
     private String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
     private JDialog dialogoNuevo;
+    private JDialog dialogoModificar;
 
 
 
     public Gui() {
-        dialogoNuevo = new Dialogo();
+        dialogoNuevo = new DialogoNuevo();
+        dialogoModificar = new DialogoModificar();
         prepararTabla(tabla);
         btnEliminar.addActionListener(e -> {
             btnEliminarActionPerformed(e);
@@ -37,6 +41,14 @@ public class Gui {
             dialogoNuevo.setLocationRelativeTo(null);
             dialogoNuevo.setVisible(true);
             mostrarTrabajadores();
+        });
+
+
+        btnModificar.addActionListener(e -> {
+            DialogoModificar dialogoMod = new DialogoModificar();
+            dialogoMod.ponerTabla(tabla,model);
+            mostrarTrabajadores();
+
         });
     }
 
