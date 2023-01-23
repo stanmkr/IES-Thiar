@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
+import java.sql.SQLException;
 
 public class DialogoModificar extends JDialog {
     private JPanel contentPane;
@@ -49,35 +50,60 @@ public class DialogoModificar extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
-        dispose();
+        String dni, nombre, apellidos, sueldo, fecha, matricula;
+        String sql;
+        // se recogen datos
+        dni = txtModDni.getText();
+        nombre = txtModNombre.getText();
+        apellidos = txtModApellidos.getText();
+        sueldo = txtModSueldo.getText().replace(",", ".");
+        fecha = txtModAnio.getText() + "/" + txtModMes.getText() + "/" + txtModDia.getText();
+        matricula = txtModMatricula.getText();
+        // construyo  y ejecuto la sentencia sql
+        sql = "Update trabajadores SET " +
+                "nombre='" + nombre + "'," +
+                "apellidos='" + apellidos + "'," +
+                "sueldo=" + sueldo + "," +
+                "fecha='" + fecha + "'," +
+                "matricula='" + matricula + "'" +
+                "WHERE DNI='" + dni + "'";
+        System.out.println(sql);
+        //System.out.println(sql);
+        try {
+            AccesoBD.sentencia.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Trabajador con DNI " + dni + " modificado correctamente");
+
+            dispose();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar el trabajador.");
+        }
     }
 
-    public void ponerTabla(JTable tabla, DefaultTableModel model){
+    public void ponerTabla(JTable tabla, DefaultTableModel model) {
         int filaSeleccionada;
         String dni, nombre, apellidos, sueldo, fecha, matricula;
         filaSeleccionada = tabla.getSelectedRow();
-        if (filaSeleccionada == -1){
-            JOptionPane.showMessageDialog(null,"Debes seleccionar el trabajador a modificar.");
-        }else {
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Debes seleccionar el trabajador a modificar.");
+        } else {
             try {
                 model = (DefaultTableModel) tabla.getModel();
-                dni = (String) model.getValueAt(filaSeleccionada,0);
-                nombre = (String) model.getValueAt(filaSeleccionada,1);
-                apellidos = (String) model.getValueAt(filaSeleccionada,2);
-                sueldo = (String) model.getValueAt(filaSeleccionada,3);
-                fecha = (String) model.getValueAt(filaSeleccionada,4);
-                matricula = (String) model.getValueAt(filaSeleccionada,5);
+                dni = (String) model.getValueAt(filaSeleccionada, 0);
+                nombre = (String) model.getValueAt(filaSeleccionada, 1);
+                apellidos = (String) model.getValueAt(filaSeleccionada, 2);
+                sueldo = (String) model.getValueAt(filaSeleccionada, 3);
+                fecha = (String) model.getValueAt(filaSeleccionada, 4);
+                matricula = (String) model.getValueAt(filaSeleccionada, 5);
                 txtModDni.setText(dni);
                 txtModNombre.setText(nombre);
                 txtModApellidos.setText(apellidos);
                 txtModSueldo.setText(sueldo);
-                txtModDia.setText(fecha.substring(0,2));
-                txtModMes.setText(fecha.substring(3,5));
-                txtModAnio.setText(fecha.substring(6,10));
+                txtModDia.setText(fecha.substring(0, 2));
+                txtModMes.setText(fecha.substring(3, 5));
+                txtModAnio.setText(fecha.substring(6, 10));
                 txtModMatricula.setText(matricula);
 
-                setSize(300,400);
+                setSize(300, 400);
                 setLocationRelativeTo(null);
                 setModal(true);
                 setVisible(true);
