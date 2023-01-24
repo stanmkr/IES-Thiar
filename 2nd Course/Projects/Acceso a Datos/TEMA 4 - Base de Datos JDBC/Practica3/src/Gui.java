@@ -1,7 +1,5 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,24 +17,28 @@ public class Gui {
     private JPanel panelAcciones;
     private JButton nuevoButton;
     private JButton btnModificar;
-    private DefaultTableModel model;
+    private JButton btnFiltrar;
+    private JTextField etiSueldoMedio;
+    private JTextField etiNumeroTrab;
+    static DefaultTableModel model;
     private String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
     private JDialog dialogoNuevo;
     private JDialog dialogoModificar;
-
 
 
     public Gui() {
         dialogoNuevo = new DialogoNuevo();
         dialogoModificar = new DialogoModificar();
         prepararTabla(tabla);
+
+
         btnEliminar.addActionListener(e -> {
             btnEliminarActionPerformed(e);
         });
 
 
         nuevoButton.addActionListener(e -> {
-            dialogoNuevo.setSize(500,400);
+            dialogoNuevo.setSize(500, 400);
             dialogoNuevo.setModal(true);
             dialogoNuevo.setLocationRelativeTo(null);
             dialogoNuevo.setVisible(true);
@@ -46,12 +48,40 @@ public class Gui {
 
         btnModificar.addActionListener(e -> {
             DialogoModificar dialogoMod = new DialogoModificar();
-            dialogoMod.ponerTabla(tabla,model);
+            dialogoMod.ponerTabla(tabla, model);
             mostrarTrabajadores();
+
+        });
+
+
+        btnFiltrar.addActionListener(e -> {
+            DialogoFiltrar dialogoFiltrar = new DialogoFiltrar();
+            dialogoFiltrar.setSize(400, 500);
+            dialogoFiltrar.setLocationRelativeTo(null);
+            dialogoFiltrar.setModal(true);
+            dialogoFiltrar.setVisible(true);
 
         });
     }
 
+    public void hacerCalculos(ResultSet resultSet) {
+        int numTrabajadores = 0;
+        double sumaSueldo = 0;
+        double media;
+        try {
+           //resultSet.beforeFirst();
+            while (resultSet.next()) {
+                numTrabajadores++;
+                sumaSueldo = sumaSueldo + resultSet.getDouble("sueldo");
+            }
+            media = sumaSueldo / numTrabajadores;
+            etiNumeroTrab.setText("" + numTrabajadores);
+            etiSueldoMedio.setText("" + media);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al realizar cálculos");
+        }
+    }
 
     public void prepararTabla(JTable tb) {
         model = new DefaultTableModel(null, titulos);
@@ -96,10 +126,7 @@ public class Gui {
         ventanaPrincipal.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent windowEvent) {
-                if (JOptionPane.showConfirmDialog(ventanaPrincipal,
-                        "¿Estas seguro/a de que quieres cerrar sesión?", "Cerrar sesión?",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                if (JOptionPane.showConfirmDialog(ventanaPrincipal, "¿Estas seguro/a de que quieres cerrar sesión?", "Cerrar sesión?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                     try {
                         AccesoBD.conexion.close();
                         System.out.println("Conexión con la base de datos cerrada correctamente.");
@@ -132,12 +159,17 @@ public class Gui {
                 model.addRow(fila);
             }
             tabla.setModel(model);
+            ResultSet res = AccesoBD.sentencia.executeQuery("SELECT * FROM trabajadores");
+            hacerCalculos(res);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al extraer los datos de la tabla");
         }
     }
 
+    public JTable getTabla() {
+        return tabla;
+    }
 
     public static void main(String[] args) {
         Gui formulario = new Gui();
