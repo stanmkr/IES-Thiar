@@ -20,8 +20,8 @@ public class Gui {
     private JButton btnFiltrar;
     private JTextField etiSueldoMedio;
     private JTextField etiNumeroTrab;
-    static DefaultTableModel model;
-    private String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
+    private DefaultTableModel model;
+    private static String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
     private JDialog dialogoNuevo;
     private JDialog dialogoModificar;
 
@@ -55,7 +55,7 @@ public class Gui {
 
 
         btnFiltrar.addActionListener(e -> {
-            DialogoFiltrar dialogoFiltrar = new DialogoFiltrar();
+            DialogoFiltrar dialogoFiltrar = new DialogoFiltrar(Gui.this);
             dialogoFiltrar.setSize(400, 500);
             dialogoFiltrar.setLocationRelativeTo(null);
             dialogoFiltrar.setModal(true);
@@ -63,6 +63,8 @@ public class Gui {
 
         });
     }
+
+
 
     public void hacerCalculos(ResultSet resultSet) {
         int numTrabajadores = 0;
@@ -83,9 +85,18 @@ public class Gui {
         }
     }
 
-    public void prepararTabla(JTable tb) {
+    public DefaultTableModel getModel() {
+        return model;
+    }
+
+    public  void prepararTabla(JTable tb) {
         model = new DefaultTableModel(null, titulos);
         tb.setModel(model);
+    }
+
+    public void prepararTablaNueva(DefaultTableModel modelo, JTable tb) {
+        modelo = new DefaultTableModel(null, titulos);
+        tb.setModel(modelo);
     }
 
 

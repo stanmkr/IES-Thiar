@@ -191,7 +191,9 @@
                 <preferred-size width="40" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <toolTipText value="día"/>
+            </properties>
           </component>
           <component id="e937c" class="javax.swing.JTextField" binding="txtFiltrarMes">
             <constraints>
@@ -199,7 +201,9 @@
                 <preferred-size width="40" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <toolTipText value="mes"/>
+            </properties>
           </component>
           <component id="27953" class="javax.swing.JTextField" binding="txtFiltrarAnio">
             <constraints>
@@ -207,7 +211,9 @@
                 <preferred-size width="70" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <toolTipText value="año"/>
+            </properties>
           </component>
         </children>
       </grid>

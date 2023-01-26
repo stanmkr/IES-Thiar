@@ -26,12 +26,11 @@ public class DialogoFiltrar extends JDialog {
     private String[] signosFiltrado = {"=", ">", "<", ">=", "<=", "<>"};
     private String[] ordenacion = {"Sin ordenacion", "DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matricula"};
     private DefaultTableModel m;
-    private Gui gui;
     private ButtonGroup grupoBotones = new ButtonGroup();
+    private static Gui gui;
 
-    public DialogoFiltrar() {
-        gui = new Gui();
-        gui.prepararTabla(gui.getTabla());
+    public DialogoFiltrar(Gui gui) {
+        DialogoFiltrar.gui = gui;
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(btnFiltraAceptar);
@@ -71,11 +70,12 @@ public class DialogoFiltrar extends JDialog {
     }
 
     private void onOK() {
-
         String dni, nombre, apellidos, sueldo, fecha, matricula;
         String cmboSueldo, cmboFecha;
         String sql;
         int numeroCondiciones = 0;
+        JTable tabla = gui.getTabla();
+
         try {
             dni = txtFiltrarDNI.getText();
             nombre = txtFiltrarNombre.getText();
@@ -132,21 +132,24 @@ public class DialogoFiltrar extends JDialog {
                 }
             }
             String campoOrden = (String) comboCamposOrdenacion.getSelectedItem();
-            if (!campoOrden.equals("(Sin ordenacion)")) {
+            if (!campoOrden.equals("Sin ordenacion")) {
                 if (radioASC.isSelected()) {
                     sql += " ORDER by " + campoOrden + " ASC";
                 } else {
                     sql += " ORDER by " + campoOrden + " DESC";
                 }
+            }else {
+                System.out.println();
             }
             try {
                 System.out.println(sql);
                 ResultSet r = AccesoBD.sentencia.executeQuery(sql);
-
-
+                m = gui.getModel();
+                while (m.getRowCount() > 0) {
+                    m.removeRow(0);
+                }
                 String[] titulos = {"DNI", "Nombre", "Apellidos", "Sueldo", "Fecha", "Matrícula"};
-                m = new DefaultTableModel(null, titulos);
-
+                //Gui.prepararTablaNueva(m,gui.getTabla());
                 String[] fila = new String[6];
                 while (r.next()) {
                     fila[0] = r.getString("DNI");
@@ -158,10 +161,8 @@ public class DialogoFiltrar extends JDialog {
                     fila[4] = fecha;
                     fila[5] = r.getString("Matricula");
                     m.addRow(fila);
-
                 }
-                gui.prepararTabla(gui.getTabla());
-                gui.hacerCalculos(r);
+                tabla.setModel(m);
                 dispose();
 
             } catch (SQLException e) {
@@ -176,7 +177,7 @@ public class DialogoFiltrar extends JDialog {
     }
 
     private void onVerTodos() {
-        new Gui().mostrarTrabajadores();
+       gui.mostrarTrabajadores();
         dispose();
     }
 
@@ -186,7 +187,7 @@ public class DialogoFiltrar extends JDialog {
     }
 
     public static void main(String[] args) {
-        DialogoFiltrar dialog = new DialogoFiltrar();
+        DialogoFiltrar dialog = new DialogoFiltrar(gui);
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
