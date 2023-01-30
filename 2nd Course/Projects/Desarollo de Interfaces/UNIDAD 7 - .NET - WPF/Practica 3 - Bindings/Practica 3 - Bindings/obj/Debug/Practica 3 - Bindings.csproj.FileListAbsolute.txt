@@ -1,0 +1,16 @@
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\bin\Debug\Practica 3 - Bindings.exe.config
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\bin\Debug\Practica 3 - Bindings.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\bin\Debug\Practica 3 - Bindings.pdb
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.csproj.AssemblyReference.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.csproj.SuggestedBindingRedirects.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\MainWindow.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\App.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings_MarkupCompile.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings_MarkupCompile.lref
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\MainWindow.baml
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.g.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica_3___Bindings.Properties.Resources.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.csproj.GenerateResource.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.csproj.CoreCompileInputs.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 3 - Bindings\Practica 3 - Bindings\obj\Debug\Practica 3 - Bindings.pdb

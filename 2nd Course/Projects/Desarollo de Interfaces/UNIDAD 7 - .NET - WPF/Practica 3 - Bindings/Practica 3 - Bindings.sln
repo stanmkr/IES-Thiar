@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica 3 - Bindings", "Practica 3 - Bindings\Practica 3 - Bindings.csproj", "{8E410766-25B0-4C56-A027-184C2D758AAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E410766-25B0-4C56-A027-184C2D758AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E410766-25B0-4C56-A027-184C2D758AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E410766-25B0-4C56-A027-184C2D758AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E410766-25B0-4C56-A027-184C2D758AAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4B39B9F-4A1F-4A7F-ACB1-595030E3EFE4}
+	EndGlobalSection
+EndGlobal
