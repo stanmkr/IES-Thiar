@@ -1,0 +1,16 @@
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\bin\Debug\Practica 2 - App Selector.exe.config
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\bin\Debug\Practica 2 - App Selector.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\bin\Debug\Practica 2 - App Selector.pdb
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.csproj.AssemblyReference.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.csproj.SuggestedBindingRedirects.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\MainWindow.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\App.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector_MarkupCompile.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector_MarkupCompile.lref
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\MainWindow.baml
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.g.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica_2___App_Selector.Properties.Resources.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.csproj.GenerateResource.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.csproj.CoreCompileInputs.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 2 - App Selector\Practica 2 - App Selector\obj\Debug\Practica 2 - App Selector.pdb

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Practica_2___App_Selector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica_2___App_Selector"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="comboBoxPersonas" HorizontalAlignment="Center" Margin="0,134,0,0" VerticalAlignment="Top" Width="234" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Rectangle HorizontalAlignment="Center" Height="100" Margin="0,184,0,0" Stroke="Black" VerticalAlignment="Top" Width="234"/>
+        <Label x:Name="labelNombre" Content="Nombre" HorizontalAlignment="Left" Margin="315,221,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelApellidos" Content="Apellidos" HorizontalAlignment="Left" Margin="412,221,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
