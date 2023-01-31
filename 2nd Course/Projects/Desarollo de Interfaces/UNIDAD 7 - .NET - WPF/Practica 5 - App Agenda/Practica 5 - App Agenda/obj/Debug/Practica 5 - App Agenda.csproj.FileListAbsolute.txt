@@ -1,0 +1,18 @@
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\bin\Debug\Practica 5 - App Agenda.exe.config
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\bin\Debug\Practica 5 - App Agenda.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\bin\Debug\Practica 5 - App Agenda.pdb
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.csproj.AssemblyReference.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.csproj.SuggestedBindingRedirects.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\MainWindow.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\App.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda_MarkupCompile.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda_MarkupCompile.lref
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\MainWindow.baml
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.g.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica_5___App_Agenda.Properties.Resources.resources
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.csproj.GenerateResource.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.csproj.CoreCompileInputs.cache
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.exe
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\Practica 5 - App Agenda.pdb
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\DialogoLibro.g.cs
+G:\Mi unidad\GitHub\IES Thiar GitHub\2nd Course\Projects\Desarollo de Interfaces\UNIDAD 7 - .NET - WPF\Practica 5 - App Agenda\Practica 5 - App Agenda\obj\Debug\DialogoLibro.baml
