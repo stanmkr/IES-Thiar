@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practica_5___App_Agenda.dto
 {
-    public class Libro : INotifyPropertyChanged, ICloneable
+    public class Libro : INotifyPropertyChanged, ICloneable, IDataErrorInfo
     {
         private String titulo;
         public String Titulo
@@ -43,13 +43,35 @@ namespace Practica_5___App_Agenda.dto
             }
         }
 
+        public string Error { get { return ""; } }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string resultado = "";
+                if (columnName == "Titulo")
+                {
+                    if (string.IsNullOrEmpty(titulo))
+                        resultado = "Debe introducir el título";
+                }
+                if (columnName == "Autor")
+                {
+                    if (string.IsNullOrEmpty(autor))
+
+                        resultado = "DEbe introducir el autor";
+                }
+                return resultado;
+            }
+        }
+
         public Libro() { this.fechaEntrada = DateTime.Now; }
 
         public Libro(String titulo, String autor, DateTime fechaEntrada)
         {
-            this.titulo= titulo;
-            this.autor= autor;
-            this.fechaEntrada= fechaEntrada;
+            this.titulo = titulo;
+            this.autor = autor;
+            this.fechaEntrada = fechaEntrada;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

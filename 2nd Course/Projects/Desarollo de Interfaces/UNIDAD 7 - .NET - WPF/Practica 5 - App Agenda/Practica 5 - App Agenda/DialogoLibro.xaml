@@ -11,8 +11,8 @@
         <Label Content="Título:&#xD;&#xA;" HorizontalAlignment="Left" Margin="18,38,0,0" VerticalAlignment="Top" Width="62"/>
         <Label Content="Autor:" HorizontalAlignment="Left" Margin="18,80,0,0" VerticalAlignment="Top" Width="62"/>
         <Label Content="Fecha entrada:" HorizontalAlignment="Left" Margin="18,124,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Titulo}" Margin="110,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding Path=Autor}" Margin="110,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
+        <TextBox HorizontalAlignment="Left" Validation.Error="Validation_Error" Text="{Binding Path=Titulo, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" Margin="110,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Validation.Error="Validation_Error" Text="{Binding Path=Autor, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" Margin="110,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
         <DatePicker HorizontalAlignment="Left" SelectedDate="{Binding Path=FechaEntrada}" Margin="110,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.149,0.301"/>
         <Button x:Name="buttonAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="42,188,0,0" VerticalAlignment="Top" Width="74" Background="#FF5595BF" BorderThickness="1,2,1,0" Foreground="White" FontSize="16" Click="buttonAceptar_Click">
             <Button.OpacityMask>

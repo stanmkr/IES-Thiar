@@ -25,6 +25,7 @@ namespace Practica_5___App_Agenda
         public Libro libro;
         private int posicion;
         private Boolean modificar;
+        private int errores;
 
         public DialogoLibro(LogicaNegocio logicaNegocio)
         {
@@ -57,6 +58,18 @@ namespace Practica_5___App_Agenda
             else
                 logicaNegocio.anyadirLibro(libro);
             this.Close();
+        }
+
+        private void Validation_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                errores++;
+            else
+                errores--;
+            if (errores == 0)
+                buttonAceptar.IsEnabled = true;
+            else
+                buttonAceptar.IsEnabled = false;
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
