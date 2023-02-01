@@ -1,4 +1,5 @@
 ﻿using Practica_5___App_Agenda.dto;
+using Practica_5___App_Agenda.logica;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,15 +23,18 @@ namespace Practica_5___App_Agenda
     /// </summary>
     public partial class MainWindow : Window
     {
+        private LogicaNegocio logicaNegocio;
 
         public MainWindow()
         {
             InitializeComponent();
+            logicaNegocio = new LogicaNegocio();    
+            dataGridLibros.DataContext = logicaNegocio;
         }
 
         private void menuItemNuevo_Click(object sender, RoutedEventArgs e)
         {
-            DialogoLibro dialogoLibro = new DialogoLibro();
+            DialogoLibro dialogoLibro = new DialogoLibro(logicaNegocio);
             dialogoLibro.ShowDialog();
         }
     }

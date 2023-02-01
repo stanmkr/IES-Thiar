@@ -71,6 +71,7 @@
       <DependentUpon>DialogoLibro.xaml</DependentUpon>
     </Compile>
     <Compile Include="dto\Libro.cs" />
+    <Compile Include="logica\LogicaNegocio.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

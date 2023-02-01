@@ -11,7 +11,7 @@
             <ColumnDefinition Width="14*"/>
             <ColumnDefinition Width="33*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGridLibros" Grid.ColumnSpan="2" Height="235" Margin="0,45,10,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGridLibros" ItemsSource="{Binding Path=listaLibros}" Grid.ColumnSpan="2" Height="235" Margin="0,45,10,0" VerticalAlignment="Top"/>
         <Menu Margin="0,0,0,389" Grid.ColumnSpan="2">
             <MenuItem Header="Archivo" FontSize="14">
                 <MenuItem x:Name="menuItemNuevo" Header="Nuevo..." Click="menuItemNuevo_Click"/>

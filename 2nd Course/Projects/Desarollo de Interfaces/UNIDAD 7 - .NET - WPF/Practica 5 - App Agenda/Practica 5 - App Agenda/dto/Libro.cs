@@ -42,6 +42,9 @@ namespace Practica_5___App_Agenda.dto
 
             }
         }
+
+        public Libro() { this.fechaEntrada = DateTime.Now; }
+
         public Libro(String titulo, String autor, DateTime fechaEntrada)
         {
             this.titulo= titulo;

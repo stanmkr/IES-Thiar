@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Practica_5___App_Agenda.dto;
+using Practica_5___App_Agenda.logica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,15 @@ namespace Practica_5___App_Agenda
     /// </summary>
     public partial class DialogoLibro : Window
     {
-        public DialogoLibro()
+        private LogicaNegocio logicaNegocio;
+        public Libro libro;
+
+        public DialogoLibro(LogicaNegocio logicaNegocio)
         {
             InitializeComponent();
+            this.logicaNegocio = logicaNegocio;
+            libro = new Libro();
+            this.DataContext= libro;
         }
 
         private void buttonCancelar_Click(object sender, RoutedEventArgs e)
@@ -29,12 +37,19 @@ namespace Practica_5___App_Agenda
             this.Close();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void buttonAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            logicaNegocio.anyadirLibro(libro);
+            libro = new Libro();
+            this.DataContext = libro;
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
