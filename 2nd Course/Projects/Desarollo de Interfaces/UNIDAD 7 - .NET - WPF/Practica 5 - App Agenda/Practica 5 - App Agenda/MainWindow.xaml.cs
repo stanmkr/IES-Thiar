@@ -28,7 +28,7 @@ namespace Practica_5___App_Agenda
         public MainWindow()
         {
             InitializeComponent();
-            logicaNegocio = new LogicaNegocio();    
+            logicaNegocio = new LogicaNegocio();
             dataGridLibros.DataContext = logicaNegocio;
         }
 
@@ -36,6 +36,18 @@ namespace Practica_5___App_Agenda
         {
             DialogoLibro dialogoLibro = new DialogoLibro(logicaNegocio);
             dialogoLibro.ShowDialog();
+        }
+
+        private void botonModificar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridLibros.SelectedIndex != -1)
+            {
+                Libro libro = (Libro)dataGridLibros.SelectedItem;
+                DialogoLibro dialogoLibro = new DialogoLibro(logicaNegocio, (Libro)libro.Clone(), dataGridLibros.SelectedIndex);
+                dialogoLibro.Show();
+
+            }
+
         }
     }
 }

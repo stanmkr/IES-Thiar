@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practica_5___App_Agenda.dto
 {
-    public class Libro : INotifyPropertyChanged
+    public class Libro : INotifyPropertyChanged, ICloneable
     {
         private String titulo;
         public String Titulo
@@ -53,5 +53,10 @@ namespace Practica_5___App_Agenda.dto
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

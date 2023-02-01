@@ -23,6 +23,8 @@ namespace Practica_5___App_Agenda
     {
         private LogicaNegocio logicaNegocio;
         public Libro libro;
+        private int posicion;
+        private Boolean modificar;
 
         public DialogoLibro(LogicaNegocio logicaNegocio)
         {
@@ -30,6 +32,17 @@ namespace Practica_5___App_Agenda
             this.logicaNegocio = logicaNegocio;
             libro = new Libro();
             this.DataContext= libro;
+            modificar= false;
+        }
+
+        public DialogoLibro(LogicaNegocio logicaNegocio, Libro libroModificar, int posicion)
+        {
+            InitializeComponent();
+            this.logicaNegocio = logicaNegocio;
+            this.libro= libroModificar;
+            this.posicion = posicion;
+            this.DataContext = libro;
+            modificar= true;
         }
 
         private void buttonCancelar_Click(object sender, RoutedEventArgs e)
@@ -39,9 +52,11 @@ namespace Practica_5___App_Agenda
 
         private void buttonAceptar_Click(object sender, RoutedEventArgs e)
         {
-            logicaNegocio.anyadirLibro(libro);
-            libro = new Libro();
-            this.DataContext = libro;
+            if(modificar)
+                logicaNegocio.modificarLibro(libro, posicion);
+            else
+                logicaNegocio.anyadirLibro(libro);
+            this.Close();
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
