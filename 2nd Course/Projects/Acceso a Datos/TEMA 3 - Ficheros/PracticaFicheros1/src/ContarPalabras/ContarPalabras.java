@@ -51,32 +51,7 @@ public class ContarPalabras {
 
 
         botonElegir.addActionListener(e -> {
-            FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt");
-            JFileChooser jFileChooser = new JFileChooser();
-            jFileChooser.setFileFilter(filtro);
-            jFileChooser.setCurrentDirectory(new File("."));
-            jFileChooser.setApproveButtonText("Abrir");
-            int seleccion = jFileChooser.showOpenDialog(getPanelGeneral());
-            if (seleccion == JFileChooser.APPROVE_OPTION) {
-                try {
-                    archivo = jFileChooser.getSelectedFile();
-                    lector = new Scanner(archivo);
-                    panel1.setVisible(false);
-
-                    while (lector.hasNextLine()) {
-                        textArea.append(lector.nextLine() + "\n");
-                    }
-                    lector.close();
-                    textArea.setEditable(false);
-                    textFieldRuta.setText(archivo.getAbsolutePath());
-                    panel2.setVisible(true);
-                    panel3.setVisible(true);
-
-
-                } catch (FileNotFoundException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
+           abrirArchivo();
         });
 
         // LISTENER BOTON SALIR
@@ -87,6 +62,34 @@ public class ContarPalabras {
 
     }
 
+    public void abrirArchivo(){
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt");
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileFilter(filtro);
+        jFileChooser.setCurrentDirectory(new File("."));
+        jFileChooser.setApproveButtonText("Abrir");
+        int seleccion = jFileChooser.showOpenDialog(getPanelGeneral());
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            try {
+                archivo = jFileChooser.getSelectedFile();
+                lector = new Scanner(archivo);
+                panel1.setVisible(false);
+
+                while (lector.hasNextLine()) {
+                    textArea.append(lector.nextLine() + "\n");
+                }
+                lector.close();
+                textArea.setEditable(false);
+                textFieldRuta.setText(archivo.getAbsolutePath());
+                panel2.setVisible(true);
+                panel3.setVisible(true);
+
+
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+    }
     public JPanel getPanelGeneral() {
         return panelGeneral;
     }

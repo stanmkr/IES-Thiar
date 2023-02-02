@@ -12,7 +12,7 @@ public class Ejercicio1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Escribe número seguido de espacio seguido de número. Si al comienzo de una linea escribes la palabra <INTRO> terminará el programa.");
         try {
-            PrintWriter fichero = new PrintWriter("Documentos/texto.txt");
+            PrintWriter fichero = new PrintWriter("Documentos/ejercicio1.txt");
             while (true) {
                 System.out.print("Escribe un número o escribe INTRO para terminar el programa: ");
                 String input1 = scanner.nextLine();

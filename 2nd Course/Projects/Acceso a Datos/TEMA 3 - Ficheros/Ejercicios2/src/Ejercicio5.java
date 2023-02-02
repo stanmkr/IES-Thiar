@@ -15,7 +15,8 @@ public class Ejercicio5 {
         try {
             System.out.print("Introduce el nombre del archivo origen incluyendo su extensión: ");
             File fileOrigen = new File("Documentos/" + scanner.nextLine());
-            if (fileOrigen.exists()){
+            System.out.println(fileOrigen.getAbsolutePath());
+            if (fileOrigen.exists()) {
                 System.out.print("Introduce el nombre del archivo destino: ");
                 PrintWriter fileDestino = new PrintWriter("Documentos/" + scanner.nextLine());
                 System.out.println("Procediendo a copiar el contenido del archivo origen al archivo destino...");
@@ -23,11 +24,15 @@ public class Ejercicio5 {
                 while (lecturaOrigen.hasNext()) {
                     String linea = lecturaOrigen.nextLine();
                     fileDestino.println(linea);
+//                    for (int i = 0; i <linea.length() ; i++) {
+//                        fileDestino.print(linea.charAt(i));
+//                    }
+//                    fileDestino.println();
                 }
                 fileDestino.flush();
                 fileDestino.close();
                 System.out.println("Hecho.");
-            }else {
+            } else {
                 System.err.println("ERROR: el archivo destino no se encuentra.");
             }
         } catch (IOException e) {

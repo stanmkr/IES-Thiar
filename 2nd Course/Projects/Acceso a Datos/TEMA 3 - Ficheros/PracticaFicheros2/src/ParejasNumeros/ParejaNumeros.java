@@ -38,7 +38,8 @@ public class ParejaNumeros {
                     fichero = new PrintWriter(jFileChooser.getSelectedFile()+".txt");
                     archivo = new File(jFileChooser.getSelectedFile()+".txt");
 
-                    String texto = areaTexto.getText();
+                    String texto = areaTexto.getText().replaceAll("\\.",",");
+
                     fichero.print(texto);
                     fichero.flush();
                     fichero.close();

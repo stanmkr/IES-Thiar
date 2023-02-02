@@ -1,11 +1,12 @@
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
-
+import org.apache.commons.io.FilenameUtils;
 import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 
 
 /**
@@ -36,10 +37,11 @@ public class Gui {
 
         botonCargarArchivo.addActionListener(e -> {
             try {
-                String nombreArchivo = "archivo_descargado.jpg";
+                String nombreArchivo = fieldURLArchivo.getText();
+                nombreArchivo = FilenameUtils.getBaseName(nombreArchivo) +"."+ FilenameUtils.getExtension(nombreArchivo);
                 DescargaArchivo.descargarArchivo(url = new URL(fieldURLArchivo.getText()), nombreArchivo);
                 archivo = new File(nombreArchivo);
-                System.out.println("Descarga completada.\nRUTA DEL ARCHIVO DESCARGO:\n" + archivo.getAbsolutePath());
+                System.out.println("Descarga completada del archivo " + nombreArchivo +"\nRUTA DEL ARCHIVO DESCARGADO:\n" + archivo.getAbsolutePath());
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -47,10 +49,23 @@ public class Gui {
 
 
         botonEnviar.addActionListener(e -> {
-            conectorFTP.conexionServidor(fieldServidorFTP.getText(), fieldUsuario.getText(), String.valueOf(fieldClave.getPassword()));
-            if (archivo != null) {
-                System.out.println(archivo.getName());
+            if (conectorFTP.conexionServidor(fieldServidorFTP.getText(), fieldUsuario.getText(), String.valueOf(fieldClave.getPassword()))){
+                try {
+                    clienteFTP.setFileType(FTP.BINARY_FILE_TYPE);
+                    FileInputStream fileInputStream = new FileInputStream(archivo.getName());
+                    clienteFTP.storeFile(archivo.getName(), fileInputStream);
+                    fileInputStream.close();
+                    JOptionPane.showMessageDialog(null, "El archivo se ha subido correctamente a la carpeta del usuario FTP", "Archivo subido", JOptionPane.INFORMATION_MESSAGE);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
+
+           // conectorFTP.conexionServidor(fieldServidorFTP.getText(), fieldUsuario.getText(), String.valueOf(fieldClave.getPassword()));
+        /*    if (archivo != null) {
+                System.out.println(archivo.getName());
+            }*/
+
         });
     }
 

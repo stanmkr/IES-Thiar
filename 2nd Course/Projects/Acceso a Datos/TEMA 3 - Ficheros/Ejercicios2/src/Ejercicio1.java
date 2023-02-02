@@ -31,9 +31,10 @@ public class Ejercicio1 {
                         vocales.put(claveHash, vocales.get(claveHash) + 1);
                     }
                 }
-                for (HashMap.Entry<String, Integer> entry : vocales.entrySet()) {
-                    System.out.printf("Vocal: %s se ha encontrado %d veces %n", entry.getKey(), entry.getValue());
-                }
+
+            }
+            for (HashMap.Entry<String, Integer> entry : vocales.entrySet()) {
+                System.out.printf("Vocal: %s se ha encontrado %d veces %n", entry.getKey(), entry.getValue());
             }
         } catch (FileNotFoundException e) {
             System.err.println("ERROR: el archivo no existe");

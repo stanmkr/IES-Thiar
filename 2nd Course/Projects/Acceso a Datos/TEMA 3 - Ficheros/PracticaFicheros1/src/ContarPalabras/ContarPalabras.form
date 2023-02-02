@@ -22,7 +22,7 @@
             </constraints>
             <properties>
               <font size="16"/>
-              <text value="CONTAR VOCALES DE UN  ARCHIVO DE TEXTO"/>
+              <text value="CONTAR PALABRAS DE UN  ARCHIVO DE TEXTO"/>
             </properties>
           </component>
           <component id="5c0e0" class="javax.swing.JButton" binding="botonElegir">

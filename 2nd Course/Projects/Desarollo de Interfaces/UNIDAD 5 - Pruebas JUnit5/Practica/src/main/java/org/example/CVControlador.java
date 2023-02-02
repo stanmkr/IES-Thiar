@@ -12,6 +12,7 @@ public class CVControlador {
      * Método que instancia todo lo necesario para arrancar el programa
      */
     public static void run() {
+
         CVVista formulario = new CVVista();
         JFrame ventana = new JFrame();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

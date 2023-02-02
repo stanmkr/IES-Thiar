@@ -43,6 +43,7 @@ public class VerArchivo {
                         textArea.append(lector.nextLine() + "\n");
                     }
                     lector.close();
+                    textArea.setEditable(false);
                     textFieldRuta.setText(archivo.getAbsolutePath());
                     panel2.setVisible(true);
                 } catch (FileNotFoundException ex) {
