@@ -1,5 +1,4 @@
 import org.apache.commons.net.ftp.FTPClient;
-
 import javax.swing.*;
 import java.io.IOException;
 
@@ -10,16 +9,10 @@ import java.io.IOException;
  */
 
 public class ConectorFTP {
-
     private final FTPClient clienteFTP;
-
 
     public ConectorFTP(FTPClient clienteFTP) {
         this.clienteFTP = clienteFTP;
-    }
-
-    public FTPClient getClienteFTP() {
-        return clienteFTP;
     }
 
     public boolean conexionServidor(String servidor, String usuario, String clave) {
@@ -29,10 +22,8 @@ public class ConectorFTP {
             if (login) {
                 if (servidor.equals("")){
                     System.out.println("Cliente: <" + usuario + "> conectado al servidor FTP: <localhost>.");
-            ;
                 }else {
                     System.out.println("Cliente: <" + usuario + "> conectado al servidor FTP: <" + servidor + ">.");
-
                 }
                 JOptionPane.showMessageDialog(null, "Conexión realizada con éxito.", "Conexión exitosa", JOptionPane.INFORMATION_MESSAGE);
                 return true;
@@ -47,7 +38,4 @@ public class ConectorFTP {
         }
         return false;
     }
-
-
-
 }
