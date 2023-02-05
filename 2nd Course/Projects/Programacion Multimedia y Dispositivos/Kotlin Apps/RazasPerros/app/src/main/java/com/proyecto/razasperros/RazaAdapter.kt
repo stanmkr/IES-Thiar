@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RazaAdapter(private val razaList: ArrayList<Raza>) :
+class RazaAdapter(private var listaRazas: ArrayList<Raza>) :
     RecyclerView.Adapter<RazaAdapter.RazaViewHolder>() {
 
     var onItemClick: ((Raza) -> Unit)? = null
@@ -23,6 +23,11 @@ class RazaAdapter(private val razaList: ArrayList<Raza>) :
 
 
     }
+    fun setListaFiltrada(listaRazas: ArrayList<Raza>){
+        this.listaRazas = listaRazas
+        notifyDataSetChanged()
+    }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RazaViewHolder {
@@ -31,7 +36,7 @@ class RazaAdapter(private val razaList: ArrayList<Raza>) :
     }
 
     override fun onBindViewHolder(holder: RazaViewHolder, position: Int) {
-        val raza = razaList[position]
+        val raza = listaRazas[position]
         holder.imagenView.setImageResource(raza.image)
         holder.nombreView.text = raza.nombre
         holder.tamanyoView.text = raza.tamanyo
@@ -47,6 +52,7 @@ class RazaAdapter(private val razaList: ArrayList<Raza>) :
     }
 
     override fun getItemCount(): Int {
-        return razaList.size
+        return listaRazas.size
     }
+
 }

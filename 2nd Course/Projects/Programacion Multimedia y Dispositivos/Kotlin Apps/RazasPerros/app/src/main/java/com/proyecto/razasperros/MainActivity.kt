@@ -3,27 +3,71 @@ package com.proyecto.razasperros
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var razaList: ArrayList<Raza>
+    private lateinit var listaDeRazas: ArrayList<Raza>
     private lateinit var razaAdapter: RazaAdapter
+    private lateinit var searchView: SearchView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        searchView = findViewById(R.id.searchView)
 
-        razaList = ArrayList()
+        listaDeRazas = ArrayList()
+        anyadirRazas()
 
-        razaList.add(
+        razaAdapter = RazaAdapter(listaDeRazas)
+        recyclerView.adapter = razaAdapter
+
+        searchView.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                listaFiltrada(newText)
+                return true
+            }
+
+        })
+        razaAdapter.onItemClick = {
+            val intent = Intent(this, DetallesActivity::class.java)
+            intent.putExtra("raza", it)
+            startActivity(intent)
+
+        }
+    }
+
+   private fun listaFiltrada (query:String?){
+       if (query!=null){
+           val listaFiltrada = ArrayList<Raza>()
+           for (i in listaDeRazas      ){
+               if (i.nombre.lowercase(Locale.ROOT).contains(query))
+                   listaFiltrada.add(i)
+           }
+           if (listaFiltrada.isEmpty()){
+               Toast.makeText(this,"No se han encontrado coincidencias",Toast.LENGTH_SHORT).show()
+           }else{
+               razaAdapter.setListaFiltrada(listaFiltrada)
+           }
+       }
+   }
+
+   private fun anyadirRazas(){
+        listaDeRazas.add(
             Raza(
                 R.drawable.doberman,
                 "Doberman",
@@ -35,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.detalles_doberman)
             )
         )
-        razaList.add(
+        listaDeRazas.add(
             Raza(
                 R.drawable.malamut,
                 "Alaskan Malamute",
@@ -48,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.detalles_malamute)
             )
         )
-        razaList.add(
+        listaDeRazas.add(
             Raza(
                 R.drawable.jamthud,
                 "Jämthund",
@@ -60,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.detalles_jamthund)
             )
         )
-        razaList.add(
+        listaDeRazas.add(
             Raza(
                 R.drawable.pastoraleman,
                 "Pastor Alemán",
@@ -72,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.detalles_pastor_aleman)
             )
         )
-        razaList.add(
+        listaDeRazas.add(
             Raza(
                 R.drawable.grifonbruselas,
                 "Grifón de Bruselas",
@@ -85,16 +129,5 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-
-
-        razaAdapter = RazaAdapter(razaList)
-        recyclerView.adapter = razaAdapter
-
-        razaAdapter.onItemClick = {
-            val intent = Intent(this, DetallesActivity::class.java)
-            intent.putExtra("raza", it)
-            startActivity(intent)
-
-        }
     }
 }
