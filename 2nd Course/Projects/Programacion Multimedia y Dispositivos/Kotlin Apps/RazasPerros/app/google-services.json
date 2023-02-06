@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045293429981",
+    "project_id": "razasperros-dam",
+    "storage_bucket": "razasperros-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045293429981:android:1052d46f7cb17db7125734",
+        "android_client_info": {
+          "package_name": "com.proyecto.razasperros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045293429981-ef62e8pu7m11dvvfntkhgk6runuvnaqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5_KHR3Ggf9o4xGwShBRkMlZMG4kB45r0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045293429981-ef62e8pu7m11dvvfntkhgk6runuvnaqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
